@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora&family=Roboto+Slab&display=swap');
+@import url('./fontawesome-free-5.14.0-web/css/all.css');
 
 .App {
     font-family: 'Roboto Slab', serif;

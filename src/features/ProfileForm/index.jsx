@@ -64,27 +64,36 @@ export default function ProfileForm() {
                         </Button>
                     </Col>
                     <Col xs="12" md="9" lg="8">
-                        <ContactForm 
-                        control={control} 
-                        errors={errors} />
+                        <ContactForm
+                            control={control}
+                            errors={errors} />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs="12">
+                        <Container className="separator-line" >
+                            <i className="fas fa-angle-double-right fa-lg" style={{ "color": "blue" }} />
+                            <i class="fab fa-react fa-3x fa-spin"style={{ "color": "blue" }} />
+                            <i className="fas fa-angle-double-left fa-lg" style={{ "color": "blue" }} />
+                        </Container>
                     </Col>
                 </Row>
                 <Row>
                     <Col xs="12" lg="6">
                         <TextFieldController
-                        type="textarea"
-                        control={control}
-                        errors={{}}
-                        rules={{}}
-                        name="about"
-                        id="text-about"
-                        placeholder="Một chút thông tin về bạn sẽ rất tuyệt..."
+                            type="textarea"
+                            control={control}
+                            errors={{}}
+                            rules={{}}
+                            name="about"
+                            id="text-about"
+                            placeholder="Một chút thông tin về bạn sẽ rất tuyệt..."
                         />
                     </Col>
                     <Col xs="12" lg="6">
                         <EducationForm
-                        control={control}
-                        errors={errors}
+                            control={control}
+                            errors={errors}
                         />
                     </Col>
                 </Row>
