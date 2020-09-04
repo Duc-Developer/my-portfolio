@@ -27,7 +27,7 @@ export default function ContactForm(props) {
             </Col>
             <Col xs="12" sm="4">
                 <RadioController
-                    checkList={["Nam", "Nữ"]}
+                    checkList={["nam", "nữ"]}
                     errors={errors}
                     rules={{ required: { value: true, message: "Giới tính là bắt buộc" } }}
                     control={control}

@@ -50,7 +50,8 @@ export default function RadioController(props) {
                                                     checked={value === item}
                                                     name="gender"
                                                     onChange={(e) => { onChange(e.target.value) }}
-                                                    type="radio" />{item}
+                                                    type="radio" />
+                                                    {item.slice(0,1).toUpperCase() + item.slice(1)}
                                             </Label>
                                         </FormGroup>
                                     </Col>
