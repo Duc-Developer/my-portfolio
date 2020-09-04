@@ -17,7 +17,13 @@ const defaultValues = {
     avatar: {},
     birthday: "",
     gender: "male",
-    rating: "Khá"
+    rating: "Khá",
+    about: "",
+    school: "",
+    specialize: "",
+    timeStart: "",
+    timeEnd: "",
+    moreInformation: ""
 }
 
 export default function ProfileForm() {
