@@ -7,6 +7,8 @@ import { useState } from 'react';
 import FileController from '../../components/Fields/FileController';
 import { useRef } from 'react';
 import ContactForm from '../ContactForm';
+import TextFieldController from '../../components/Fields/TextFieldController';
+import EducationForm from '../EducationForm';
 
 const defaultValues = {
     email: "ddd@ada.com",
@@ -14,7 +16,8 @@ const defaultValues = {
     address: "",
     avatar: {},
     birthday: "",
-    gender: "male"
+    gender: "male",
+    rating: "Khá"
 }
 
 export default function ProfileForm() {
@@ -60,6 +63,27 @@ export default function ProfileForm() {
                         errors={errors} />
                     </Col>
                 </Row>
+                <Row>
+                    <Col xs="12" lg="6">
+                        <TextFieldController
+                        type="textarea"
+                        control={control}
+                        errors={{}}
+                        rules={{}}
+                        name="about"
+                        id="text-about"
+                        placeholder="Một chút thông tin về bạn sẽ rất tuyệt..."
+                        />
+                    </Col>
+                    <Col xs="12" lg="6">
+                        <EducationForm
+                        control={control}
+                        errors={errors}
+                        />
+                    </Col>
+                </Row>
+
+
                 <Row>
                     <Col className="submit-button-wrap" xs="12">
                         <Button
