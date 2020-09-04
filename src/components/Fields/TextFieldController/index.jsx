@@ -19,6 +19,8 @@ TextFieldController.propTypes = {
 
 TextFieldController.defaultProps = {
     hiddenLabel: false,
+    errors: {},
+    rules: {}
 }
 
 export default function TextFieldController(props) {
