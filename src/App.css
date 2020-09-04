@@ -1,3 +1,5 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Roboto+Slab&display=swap');
 
+.App {
+    font-family: 'Roboto Slab', serif;
 }
