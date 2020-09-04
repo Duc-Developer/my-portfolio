@@ -52,7 +52,11 @@ export default function SelectMultiController(props) {
                 defaultValue={control.defaultValuesRef.current[name]}
                 render={({ onChange, value }) => {
                     return <div>
-                        <Input type="select" defaultValue={value} id={id}>
+                        <Input 
+                        onChange={(e) => {onChange(e.target.value)}}
+                        type="select" 
+                        defaultValue={value} 
+                        id={id}>
                             {
                                 listSelect.map((item, index) => {
                                     return <option
