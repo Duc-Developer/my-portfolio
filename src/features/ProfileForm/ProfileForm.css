@@ -25,3 +25,10 @@
 .avatar:hover {
     opacity: 0.7;
 }
+
+.submit-button-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}

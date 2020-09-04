@@ -61,7 +61,7 @@ export default function ProfileForm() {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs="12">
+                    <Col className="submit-button-wrap" xs="12">
                         <Button
                             color="primary"
                             type="submit">
