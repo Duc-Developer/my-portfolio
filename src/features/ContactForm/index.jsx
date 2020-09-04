@@ -4,7 +4,7 @@ import TextFieldController from '../../components/Fields/TextFieldController';
 import RadioController from '../../components/Fields/RadioController';
 
 export default function ContactForm(props) {
-
+    
     const { control, errors } = props
     return <div className="contact-form">
         <Row>

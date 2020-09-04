@@ -55,7 +55,9 @@ export default function ProfileForm() {
                         </Button>
                     </Col>
                     <Col xs="12" md="9" lg="8">
-                        <ContactForm control={control} errors={errors} />
+                        <ContactForm 
+                        control={control} 
+                        errors={errors} />
                     </Col>
                 </Row>
                 <Row>
