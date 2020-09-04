@@ -36,7 +36,7 @@ export default function TextFieldController(props) {
         size,
         tag
     } = props;
-
+    const defaultValue = control.defaultValuesRef.current[name];
 
     return <div>
         <Controller
@@ -62,6 +62,7 @@ export default function TextFieldController(props) {
                         size={size}
                         tag={tag}
                         id={id}
+                        defaultValue={defaultValue}
                         onChange={(e) => { onChange(e) }}
                         placeholder={placeholder}
                     />
