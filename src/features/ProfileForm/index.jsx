@@ -82,6 +82,7 @@ export default function ProfileForm() {
                     <Col xs="12" lg="6">
                         <TextFieldController
                             type="textarea"
+                            lableName="Giới thiệu:"
                             control={control}
                             errors={{}}
                             rules={{}}

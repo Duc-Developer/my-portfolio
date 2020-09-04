@@ -11,7 +11,7 @@ export default function EducationForm(props) {
             <Col xs="12" lg="6">
                 <TextFieldController
                     name="school"
-                    lableName="School:"
+                    lableName="Truờng:"
                     type="text"
                     id="inputSchool"
                     placeholder="What is your school"

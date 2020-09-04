@@ -66,7 +66,7 @@ export default function ContactForm(props) {
             <Col xs="12">
                 <TextFieldController
                     name="address"
-                    lableName="Adress:"
+                    lableName="Địa chỉ:"
                     type="tel"
                     id="inputAddress"
                     placeholder="Address Here...."
