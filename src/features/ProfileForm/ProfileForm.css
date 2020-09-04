@@ -1,0 +1,27 @@
+.profile-form {
+    font-size: large;
+    margin-top: calc(5vh);
+}
+
+.avatar-container {
+    text-align: center;
+}
+
+.avatar-wrap {
+    border: 2px solid #aaaaaa;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar {
+    width: 200px;
+}
+
+.avatar:hover {
+    opacity: 0.7;
+}

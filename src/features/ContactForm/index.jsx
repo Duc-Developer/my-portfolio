@@ -26,12 +26,13 @@ export default function ContactForm(props) {
                     control={control} />
             </Col>
             <Col xs="12" sm="4">
-                <h6><b>Giới tính:</b></h6>
                 <RadioController
                     checkList={["Nam", "Nữ"]}
                     errors={errors}
                     rules={{ required: { value: true, message: "Giới tính là bắt buộc" } }}
-                    control={control} />
+                    control={control}
+                    title="Giới tính:"
+                     />
             </Col>
         </Row>
         <Row>

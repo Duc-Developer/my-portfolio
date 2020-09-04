@@ -1,51 +1,61 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'reactstrap';
-
+import defaultAvatar from '../../images/default-placeholder.png'
 import './ProfileForm.css';
 import { useForm } from 'react-hook-form';
-import TextFieldController from '../../components/Fields/TextFieldController';
+import { useState } from 'react';
+import FileController from '../../components/Fields/FileController';
+import { useRef } from 'react';
+import ContactForm from '../ContactForm';
+
+const defaultValues = {
+    email: "ddd@ada.com",
+    phone: "",
+    address: "",
+    avatar: {},
+    birthday: "",
+    gender: "male"
+}
 
 export default function ProfileForm() {
 
     const {
         control,
-        register,
         handleSubmit,
-        errors } = useForm({});
+        errors } = useForm({ defaultValues });
+    const [imgUrl, setImg] = useState(defaultAvatar);
+    let imgUpload = useRef(null);
 
     const onSubmit = (data) => {
         console.log(data);
+    };
+
+    const handleClickImg = () => {
+        imgUpload.current.click();
     }
+
     return <div className="profile-form">
         <form onSubmit={handleSubmit(onSubmit)} >
             <Container>
                 <Row>
-                    <Col xs="12" sm="4">
-                        Image here
+                    <Col className="avatar-container" xs="12" md="3" lg="4">
+                        <Button color="link" onClick={handleClickImg}>
+                            <div className="avatar-wrap">
+                                <img src={imgUrl} alt="avatar" className="avatar" />
+                            </div>
+                            <FileController
+                                control={control}
+                                style={{ "display": "none" }}
+                                innerRef={imgUpload}
+                                onChange={(file) => {
+                                    let src = URL.createObjectURL(file);
+                                    setImg(src);
+                                }}
+                                name="avatar" />
+                        </Button>
                     </Col>
-                    <Col xs="12" sm="8">
-                        <Row>
-                            <Col xs="12" sm="8">
-                                <TextFieldController
-                                    name="email"
-                                    lableName="Email"
-                                    type="text"
-                                    id="inputEmail"
-                                    placeholder="Email Here...."
-                                    rules={{
-                                        required: { value: true, message: "Email là bắt buộc." },
-                                        pattern: {
-                                            value: /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/,
-                                            message: "Định dạng email chưa đúng."
-                                        }
-                                    }}
-                                    errors={errors}
-                                    control={control} />
-                            </Col>
-                            <Col xs="12" sm="4">
-                                Gender here
-                            </Col>
-                        </Row>
+                    <Col xs="12" md="9" lg="8">
+                        <ContactForm control={control} errors={errors} />
                     </Col>
                 </Row>
                 <Row>
