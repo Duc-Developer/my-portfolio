@@ -107,7 +107,7 @@ export default function ProfileForm() {
                 </Row>
                 <Row>
                     <Col xs="12">
-                        <ExperienceForm control={control} />
+                        <ExperienceForm setValue={setValue} control={control} />
                     </Col>
                 </Row>
 
