@@ -13,7 +13,7 @@ import ExperienceForm from '../ExperienceForm';
 import SpecialForm from '../SpecialForm'
 
 const defaultValues = {
-    email: "ddd@ada.com",
+    email: "",
     phone: "",
     address: "",
     avatar: {},
@@ -36,7 +36,7 @@ const defaultValues = {
         }
     ],
     special: [
-        { name: "", range: 10.5, id: "da" }
+        { name: "", range: 0, id: "daagdfg" }
     ]
 }
 
@@ -46,7 +46,6 @@ export default function ProfileForm() {
         control,
         handleSubmit,
         errors,
-        getValues,
         setValue
     } = useForm({ defaultValues });
     const [imgUrl, setImg] = useState(defaultAvatar);
@@ -124,9 +123,7 @@ export default function ProfileForm() {
                                     onClick={() => { setStatus("education") }}>
                                     <span>Education</span>
                                     {
-                                        errors.school &&
-                                        <i style={{ "color": "red" }} className="fas fa-asterisk" />
-                                        || errors.rating &&
+                                        (errors.school || errors.rating)  &&
                                         <i style={{ "color": "red" }} className="fas fa-asterisk" />
                                     }
                                 </Button>
