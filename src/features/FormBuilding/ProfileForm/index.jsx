@@ -27,7 +27,13 @@ const defaultValues = {
     timeEnd: "",
     moreInformation: "",
     experience: [
-        { time: "", company: "", achievements: "", id: "dfeeds" }
+        { 
+            time: "", 
+            company: "", 
+            achievements: "", 
+            position: "",
+            id: "dfeeds" 
+        }
     ],
     special: [
         { name: "", range: 10.5, id: "da" }

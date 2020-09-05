@@ -32,8 +32,18 @@ export default function ExperienceForm(props) {
                         ])
                     }
                     function handleAddRow() {
-                        const { time, company, achievements } = value[value.length - 1];
-                        if (!time.length || !company.length || !achievements.length) {
+                        const {
+                            time,
+                            company,
+                            achievements,
+                            position
+                        } = value[value.length - 1];
+                        if (
+                            !time.length
+                            || !company.length
+                            || !achievements.length
+                            || !position.length
+                        ) {
                             setError("Không thể thêm hàng nếu ô trống!");
                             return;
                         } else {
@@ -41,10 +51,16 @@ export default function ExperienceForm(props) {
                         }
                         setValue("experience", [
                             ...value,
-                            { time: "", company: "", achievements: "", id: ids.generate() }
+                            {
+                                time: "",
+                                company: "",
+                                achievements: "",
+                                position: "",
+                                id: ids.generate()
+                            }
                         ]);
                     }
-                    
+
                     return <div>
                         {
                             value.map((item, index) => {
@@ -59,20 +75,32 @@ export default function ExperienceForm(props) {
                                                 onChange={(e) => { handleOnChange(e, index) }}
                                             />
                                         </Col>
-                                        <Col xs="12" sm="8" lg="4">
+                                        <Col xs="12" sm="4" lg="2">
                                             <Label><b>Công ty:</b></Label>
                                             <Input
                                                 type="text"
                                                 name="company"
+                                                placeholder="VD: FPT TELECOM"
                                                 defaultValue={item.company}
                                                 onChange={(e) => { handleOnChange(e, index) }}
                                             />
                                         </Col>
-                                        <Col sm="12" lg="6">
+                                        <Col xs="12" sm="4" lg="2">
+                                            <Label><b>Chức vụ:</b></Label>
+                                            <Input
+                                                type="text"
+                                                name="position"
+                                                placeholder="VD: Developer"
+                                                defaultValue={item.position}
+                                                onChange={(e) => { handleOnChange(e, index) }}
+                                            />
+                                        </Col>
+                                        <Col xs="12" sm="12" lg="6">
                                             <Label><b>Thành tích:</b></Label>
                                             <Input
                                                 type="textarea"
                                                 name="achievements"
+                                                placeholder="Bạn đã đạt được..."
                                                 defaultValue={item.achievements}
                                                 onChange={(e) => { handleOnChange(e, index) }}
                                             />
@@ -89,7 +117,7 @@ export default function ExperienceForm(props) {
                             </Col>
                             <Col xs={12} sm={6} md={6}>
                                 {
-                                    errorRow && 
+                                    errorRow &&
                                     <Badge className="alert-add-row" color="warning" pill>
                                         <i>{errorRow}</i>
                                     </Badge>
