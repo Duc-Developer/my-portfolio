@@ -10,6 +10,7 @@ import ContactForm from '../ContactForm';
 import TextFieldController from '../../components/Fields/TextFieldController';
 import EducationForm from '../EducationForm';
 import ExperienceForm from '../ExperienceForm';
+import SpecialForm from '../SpecialForm'
 
 const defaultValues = {
     email: "ddd@ada.com",
@@ -27,6 +28,9 @@ const defaultValues = {
     moreInformation: "",
     experience: [
         { time: "", company: "", achievements: "", id: "dfeeds"}
+    ],
+    special: [
+        { name: "", range: 10.5, id: "da"}
     ]
 }
 
@@ -108,6 +112,11 @@ export default function ProfileForm() {
                 <Row>
                     <Col xs="12">
                         <ExperienceForm setValue={setValue} control={control} />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs="12">
+                        <SpecialForm setValue={setValue} control={control} />
                     </Col>
                 </Row>
 
