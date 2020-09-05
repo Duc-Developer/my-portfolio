@@ -1,6 +1,7 @@
 .profile-form {
     font-size: large;
-    margin-top: calc(5vh);
+    padding-top: calc(5vh);
+    padding-bottom: calc(5vh);
 }
 
 .avatar-container {

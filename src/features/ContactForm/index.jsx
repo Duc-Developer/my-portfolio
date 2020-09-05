@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col } from 'reactstrap';
 import TextFieldController from '../../components/Fields/TextFieldController';
 import RadioController from '../../components/Fields/RadioController';
+import './ContactForm.css';
 
 export default function ContactForm(props) {
     

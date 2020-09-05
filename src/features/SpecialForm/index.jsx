@@ -48,7 +48,7 @@ export default function SpecialForm(props) {
                             value.map((item, index) => {
                                 return <div className="input-special-group" key={item.id}>
                                     <Row>
-                                        <Col xs="10" md="3" >
+                                        <Col xs="12" md="3" >
                                             <Input
                                                 type="text"
                                                 name="name"
@@ -57,10 +57,10 @@ export default function SpecialForm(props) {
                                                 onChange={(e) => { handleOnChange(e, index) }}
                                             />
                                         </Col>
-                                        <Col xs="2" md="1">
+                                        <Col xs="3" md="1">
                                             <i>{`${item.range}%`}</i>
                                         </Col>
-                                        <Col xs="12" md="8" className="input-range-column" >
+                                        <Col xs="9" md="8" className="input-range-column" >
                                             <Input
                                                 type="range"
                                                 name="range"

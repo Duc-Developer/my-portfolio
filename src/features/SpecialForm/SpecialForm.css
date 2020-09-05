@@ -1,3 +1,10 @@
+.special-form {
+    background-color: white;
+    padding: 20px 10px 20px 10px;
+    border-radius: 20px;
+    margin: 10px 0 0px 0;
+}
+
 .input-special-group {
     margin-top: 10px;
 }

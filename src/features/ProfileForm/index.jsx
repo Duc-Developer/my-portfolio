@@ -58,7 +58,7 @@ export default function ProfileForm() {
         <form onSubmit={handleSubmit(onSubmit)} >
             <Container>
                 <Row>
-                    <Col className="avatar-container" xs="12" md="3" lg="4">
+                    <Col className="avatar-container" xs="12" md="4" lg="3">
                         <Button color="link" onClick={handleClickImg}>
                             <div className="avatar-wrap">
                                 <img src={imgUrl} alt="avatar" className="avatar" />
@@ -74,7 +74,7 @@ export default function ProfileForm() {
                                 name="avatar" />
                         </Button>
                     </Col>
-                    <Col xs="12" md="9" lg="8">
+                    <Col xs="12" md="8" lg="9">
                         <ContactForm
                             control={control}
                             errors={errors} />
@@ -83,9 +83,9 @@ export default function ProfileForm() {
                 <Row>
                     <Col xs="12">
                         <Container className="separator-line" >
-                            <i className="fas fa-angle-double-right fa-lg" style={{ "color": "blue" }} />
-                            <i className="fab fa-react fa-3x fa-spin"style={{ "color": "blue" }} />
-                            <i className="fas fa-angle-double-left fa-lg" style={{ "color": "blue" }} />
+                            <i className="fas fa-angle-double-right fa-lg" style={{ "color": "#87CEFA" }} />
+                            <i className="fab fa-react fa-3x fa-spin"style={{ "color": "#87CEFA" }} />
+                            <i className="fas fa-angle-double-left fa-lg" style={{ "color": "#87CEFA" }} />
                         </Container>
                     </Col>
                 </Row>
@@ -94,6 +94,7 @@ export default function ProfileForm() {
                         <TextFieldController
                             type="textarea"
                             lableName="Giới thiệu:"
+                            lableNameColor="white"
                             control={control}
                             errors={{}}
                             rules={{}}

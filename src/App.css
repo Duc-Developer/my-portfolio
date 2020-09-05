@@ -1,6 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora&family=Roboto+Slab&display=swap');
-@import url('./fontawesome-free-5.14.0-web/css/all.css');
+@import url("https://fonts.googleapis.com/css2?family=Lora&family=Roboto+Slab&display=swap");
+@import url("./fontawesome-free-5.14.0-web/css/all.css");
 
 .App {
-    font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
+  background: #232526; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #414345,
+    #232526
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #414345,
+    #232526
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
