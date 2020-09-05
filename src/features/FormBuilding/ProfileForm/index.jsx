@@ -27,12 +27,12 @@ const defaultValues = {
     timeEnd: "",
     moreInformation: "",
     experience: [
-        { 
-            time: "", 
-            company: "", 
-            achievements: "", 
+        {
+            time: "",
+            company: "",
+            achievements: "",
             position: "",
-            id: "dfeeds" 
+            id: "dfeeds"
         }
     ],
     special: [
@@ -50,7 +50,7 @@ export default function ProfileForm() {
     } = useForm({ defaultValues });
     const [imgUrl, setImg] = useState(defaultAvatar);
     const [mobiStatus, setStatus] = useState(null); //experience, special
-    let imgUpload = useRef(null);
+    let imgUpload = useRef(false);
 
     const onSubmit = (data) => {
         console.log("data: ", data);
@@ -123,7 +123,7 @@ export default function ProfileForm() {
                                     onClick={() => { setStatus("education") }}>
                                     <span>Education</span>
                                     {
-                                        (errors.school || errors.rating)  &&
+                                        (errors.school || errors.rating) &&
                                         <i style={{ "color": "red" }} className="fas fa-asterisk" />
                                     }
                                 </Button>
@@ -131,7 +131,7 @@ export default function ProfileForm() {
                                     color="info"
                                     onClick={() => { setStatus("experience") }}>
                                     <span>Experience</span>
-                                    </Button>
+                                </Button>
                                 <Button
                                     color="success"
                                     onClick={() => { setStatus("special") }}>
@@ -187,11 +187,29 @@ export default function ProfileForm() {
 
                 <Row>
                     <Col className="submit-button-wrap" xs="12">
-                        <Button
-                            color="primary"
-                            type="submit">
-                            Submit
-                        </Button>
+                        <ButtonGroup>
+                            <Button
+                                outline
+                                onClick={() => {
+                                    // do print with react-to-print npm
+                                }}
+                                color="info">
+                                Print
+                            </Button>
+                            <Button
+                                color="primary"
+                                type="submit">
+                                Submit
+                            </Button>
+                            <Button
+                                outline
+                                onClick={() => {
+                                    // do show CV
+                                }}
+                                color="success">
+                                PreView
+                            </Button>
+                        </ButtonGroup>
                     </Col>
                 </Row>
             </Container>
