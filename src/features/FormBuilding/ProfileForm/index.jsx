@@ -1,13 +1,13 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'reactstrap';
-import defaultAvatar from '../../images/default-placeholder.png'
+import defaultAvatar from '../../../images/default-placeholder.png'
 import './ProfileForm.css';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
-import FileController from '../../components/Fields/FileController';
+import FileController from '../../../components/Fields/FileController';
 import { useRef } from 'react';
 import ContactForm from '../ContactForm';
-import TextFieldController from '../../components/Fields/TextFieldController';
+import TextFieldController from '../../../components/Fields/TextFieldController';
 import EducationForm from '../EducationForm';
 import ExperienceForm from '../ExperienceForm';
 import SpecialForm from '../SpecialForm'

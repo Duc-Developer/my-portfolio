@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import ProfileForm from './features/ProfileForm';
+import ProfileForm from './features/FormBuilding/ProfileForm';
+
 
 function App() {
   return (
