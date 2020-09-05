@@ -71,7 +71,7 @@ export default function ExperienceForm(props) {
                                         <Col sm="12" lg="6">
                                             <Label><b>Thành tích:</b></Label>
                                             <Input
-                                                type="text"
+                                                type="textarea"
                                                 name="achievements"
                                                 defaultValue={item.achievements}
                                                 onChange={(e) => { handleOnChange(e, index) }}
