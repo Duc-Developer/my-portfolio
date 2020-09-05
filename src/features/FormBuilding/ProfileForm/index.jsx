@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Button } from 'reactstrap';
+import { Container, Row, Col, Button, ButtonGroup } from 'reactstrap';
 import defaultAvatar from '../../../images/default-placeholder.png'
 import './ProfileForm.css';
 import { useForm } from 'react-hook-form';
@@ -27,10 +27,10 @@ const defaultValues = {
     timeEnd: "",
     moreInformation: "",
     experience: [
-        { time: "", company: "", achievements: "", id: "dfeeds"}
+        { time: "", company: "", achievements: "", id: "dfeeds" }
     ],
     special: [
-        { name: "", range: 10.5, id: "da"}
+        { name: "", range: 10.5, id: "da" }
     ]
 }
 
@@ -42,12 +42,13 @@ export default function ProfileForm() {
         errors,
         getValues,
         setValue
-     } = useForm({ defaultValues });
+    } = useForm({ defaultValues });
     const [imgUrl, setImg] = useState(defaultAvatar);
+    const [mobiStatus, setStatus] = useState(null); //experience, special
     let imgUpload = useRef(null);
-    
+
     const onSubmit = (data) => {
-        console.log("data: ",data);
+        console.log("data: ", data);
     };
 
     const handleClickImg = () => {
@@ -84,7 +85,7 @@ export default function ProfileForm() {
                     <Col xs="12">
                         <Container className="separator-line" >
                             <i className="fas fa-angle-double-right fa-lg" style={{ "color": "#87CEFA" }} />
-                            <i className="fab fa-react fa-3x fa-spin"style={{ "color": "#87CEFA" }} />
+                            <i className="fab fa-react fa-3x fa-spin" style={{ "color": "#87CEFA" }} />
                             <i className="fas fa-angle-double-left fa-lg" style={{ "color": "#87CEFA" }} />
                         </Container>
                     </Col>
@@ -104,20 +105,80 @@ export default function ProfileForm() {
                         />
                     </Col>
                     <Col xs="12" lg="6">
-                        <EducationForm
-                            control={control}
-                            errors={errors}
-                        />
+                        <div className="on-default-screen">
+                            <EducationForm
+                                control={control}
+                                errors={errors}
+                            />
+                        </div>
+                        <div className="on-mobile-screen group-button-control-mobi" >
+                            <ButtonGroup>
+                                <Button
+                                    color="primary"
+                                    onClick={() => { setStatus("education") }}>
+                                    <span>Education</span>
+                                    {
+                                        errors.school &&
+                                        <i style={{ "color": "red" }} className="fas fa-asterisk" />
+                                        || errors.rating &&
+                                        <i style={{ "color": "red" }} className="fas fa-asterisk" />
+                                    }
+                                </Button>
+                                <Button
+                                    color="info"
+                                    onClick={() => { setStatus("experience") }}>
+                                    <span>Experience</span>
+                                    </Button>
+                                <Button
+                                    color="success"
+                                    onClick={() => { setStatus("special") }}>
+                                    <span>Special</span>
+                                </Button>
+                            </ButtonGroup>
+                        </div>
+                        {
+                            mobiStatus === "education" &&
+                            <div className="on-mobile-screen">
+                                <EducationForm
+                                    control={control}
+                                    errors={errors}
+                                />
+                            </div>
+                        }
                     </Col>
                 </Row>
                 <Row>
                     <Col xs="12">
-                        <ExperienceForm setValue={setValue} control={control} />
+                        <div className="on-default-screen">
+                            <ExperienceForm
+                                setValue={setValue}
+                                control={control} />
+                        </div>
+                        {
+                            mobiStatus === "experience" &&
+                            <div className="on-mobile-screen">
+                                <ExperienceForm
+                                    setValue={setValue}
+                                    control={control} />
+                            </div>
+                        }
                     </Col>
                 </Row>
                 <Row>
                     <Col xs="12">
-                        <SpecialForm setValue={setValue} control={control} />
+                        <div className="on-default-screen">
+                            <SpecialForm
+                                setValue={setValue}
+                                control={control} />
+                        </div>
+                        {
+                            mobiStatus === "special" &&
+                            <div className="on-mobile-screen">
+                                <SpecialForm
+                                    setValue={setValue}
+                                    control={control} />
+                            </div>
+                        }
                     </Col>
                 </Row>
 

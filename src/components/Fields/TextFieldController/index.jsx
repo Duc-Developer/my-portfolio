@@ -53,9 +53,9 @@ export default function TextFieldController(props) {
                     <Row>
                         <Col xs="12" sm="4">
                             <Label for={id} hidden={hiddenLabel}>
-                                <b style={{"color": lableNameColor}}>
+                                <b style={{ "color": lableNameColor }}>
                                     {lableName}
-                                    </b>
+                                </b>
                             </Label>
                         </Col>
                         <Col xs="12" sm="8">

@@ -65,6 +65,8 @@ export default function SpecialForm(props) {
                                                 type="range"
                                                 name="range"
                                                 defaultValue={item.range}
+                                                min="0" 
+                                                max="100"
                                                 onChange={(e) => { handleOnChange(e, index) }}
                                             />
                                         </Col>
