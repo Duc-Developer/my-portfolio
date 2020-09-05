@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Input, Button, Container, Col, Label } from 'reactstrap';
+import { Row, Input, Button, Container, Col, Label, Badge } from 'reactstrap';
 import { Controller } from 'react-hook-form';
 import { useState } from 'react';
 import * as ids from 'short-id';
@@ -72,9 +72,21 @@ export default function SpecialForm(props) {
                                 </div>
                             })
                         }
-                        <Button color="link" onClick={handleAddRow}>
-                            <i className="far fa-plus-square fa-3x" />
-                        </Button>
+                        <Row>
+                            <Col xs={12} sm={6} md={2}>
+                                <Button color="link" onClick={handleAddRow}>
+                                    <i className="far fa-plus-square fa-3x" />
+                                </Button>
+                            </Col>
+                            <Col xs={12} sm={6} md={6}>
+                                {
+                                    errorRow && 
+                                    <Badge className="alert-add-row" color="warning" pill>
+                                        <i>{errorRow}</i>
+                                    </Badge>
+                                }
+                            </Col>
+                        </Row>
                     </div>
                 }}
             />
