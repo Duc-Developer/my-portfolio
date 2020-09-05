@@ -3,6 +3,7 @@ import { Row, Col, Button, Input, Label, Container, Badge } from 'reactstrap';
 import './ExperienceForm.css'
 import { Controller } from 'react-hook-form';
 import { useState } from 'react';
+import * as ids from 'short-id';
 
 export default function ExperienceForm(props) {
 
@@ -40,10 +41,10 @@ export default function ExperienceForm(props) {
                         }
                         setValue("experience", [
                             ...value,
-                            { time: "", company: "", achievements: "", id: "dssa" }
+                            { time: "", company: "", achievements: "", id: ids.generate() }
                         ]);
                     }
-
+                    
                     return <div>
                         {
                             value.map((item, index) => {
