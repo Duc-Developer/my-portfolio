@@ -9,6 +9,7 @@ import { useRef } from 'react';
 import ContactForm from '../ContactForm';
 import TextFieldController from '../../components/Fields/TextFieldController';
 import EducationForm from '../EducationForm';
+import ExperienceForm from '../ExperienceForm';
 
 const defaultValues = {
     email: "ddd@ada.com",
@@ -23,7 +24,10 @@ const defaultValues = {
     specialize: "",
     timeStart: "",
     timeEnd: "",
-    moreInformation: ""
+    moreInformation: "",
+    experience: [
+        { time: "", company: "", achievements: "", id: "dfeeds"}
+    ]
 }
 
 export default function ProfileForm() {
@@ -31,12 +35,15 @@ export default function ProfileForm() {
     const {
         control,
         handleSubmit,
-        errors } = useForm({ defaultValues });
+        errors,
+        getValues,
+        setValue
+     } = useForm({ defaultValues });
     const [imgUrl, setImg] = useState(defaultAvatar);
     let imgUpload = useRef(null);
-
+    
     const onSubmit = (data) => {
-        console.log(data);
+        console.log("data: ",data);
     };
 
     const handleClickImg = () => {
@@ -73,7 +80,7 @@ export default function ProfileForm() {
                     <Col xs="12">
                         <Container className="separator-line" >
                             <i className="fas fa-angle-double-right fa-lg" style={{ "color": "blue" }} />
-                            <i class="fab fa-react fa-3x fa-spin"style={{ "color": "blue" }} />
+                            <i className="fab fa-react fa-3x fa-spin"style={{ "color": "blue" }} />
                             <i className="fas fa-angle-double-left fa-lg" style={{ "color": "blue" }} />
                         </Container>
                     </Col>
@@ -98,7 +105,11 @@ export default function ProfileForm() {
                         />
                     </Col>
                 </Row>
-
+                <Row>
+                    <Col xs="12">
+                        <ExperienceForm control={control} />
+                    </Col>
+                </Row>
 
                 <Row>
                     <Col className="submit-button-wrap" xs="12">
