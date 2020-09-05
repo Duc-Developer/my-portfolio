@@ -15,12 +15,14 @@ TextFieldController.propTypes = {
     errors: PropTypes.object,
     size: PropTypes.string, // lg normal sm
     tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+    lableNameColor: PropTypes.string
 }
 
 TextFieldController.defaultProps = {
     hiddenLabel: false,
     errors: {},
-    rules: {}
+    rules: {},
+    lableNameColor: "#0000000"
 }
 
 export default function TextFieldController(props) {
@@ -36,7 +38,8 @@ export default function TextFieldController(props) {
         placeholder,
         errors,
         size,
-        tag
+        tag,
+        lableNameColor
     } = props;
     const defaultValue = control.defaultValuesRef.current[name];
 
@@ -50,7 +53,9 @@ export default function TextFieldController(props) {
                     <Row>
                         <Col xs="3">
                             <Label for={id} hidden={hiddenLabel}>
-                                <b>{lableName}</b>
+                                <b style={{"color": lableNameColor}}>
+                                    {lableName}
+                                    </b>
                             </Label>
                         </Col>
                         <Col xs="9">
