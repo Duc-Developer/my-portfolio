@@ -51,14 +51,14 @@ export default function TextFieldController(props) {
             render={({ onChange }) => {
                 return <Container>
                     <Row>
-                        <Col xs="3">
+                        <Col xs="12" sm="4">
                             <Label for={id} hidden={hiddenLabel}>
                                 <b style={{"color": lableNameColor}}>
                                     {lableName}
                                     </b>
                             </Label>
                         </Col>
-                        <Col xs="9">
+                        <Col xs="12" sm="8">
                             {errors[name] && <Badge color="warning">
                                 <i>{errors[name].message}</i>
                             </Badge>}
