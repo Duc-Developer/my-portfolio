@@ -108,6 +108,7 @@ export default function ProfileForm() {
             <Col xs="12" lg="6">
               <TextFieldController
                 type="textarea"
+                height="15em"
                 lableName="Giới thiệu:"
                 lableNameColor="white"
                 control={control}

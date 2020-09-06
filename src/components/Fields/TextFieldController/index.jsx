@@ -15,7 +15,9 @@ TextFieldController.propTypes = {
     errors: PropTypes.object,
     size: PropTypes.string, // lg normal sm
     tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
-    lableNameColor: PropTypes.string
+    lableNameColor: PropTypes.string,
+    height: PropTypes.string,
+    width: PropTypes.string
 }
 
 TextFieldController.defaultProps = {
@@ -39,7 +41,9 @@ export default function TextFieldController(props) {
         errors,
         size,
         tag,
-        lableNameColor
+        lableNameColor,
+        height,
+        width
     } = props;
     const defaultValue = control.defaultValuesRef.current[name];
 
@@ -65,6 +69,10 @@ export default function TextFieldController(props) {
                         </Col>
                     </Row>
                     <Input
+                        style={{
+                            height:height,
+                            width: width
+                        }}
                         type={type}
                         size={size}
                         tag={tag}

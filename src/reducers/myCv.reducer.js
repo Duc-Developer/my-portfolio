@@ -34,6 +34,7 @@ export function myCvReducer(state = initialState, action) {
     const {type, payload} = action;
     switch(type) {
         case cvType.CREATE_MY_CV_SUCCESS:
+            alert("Cập nhật thông tin thành công!")
             return {
                 ...state,
                 profile: payload
