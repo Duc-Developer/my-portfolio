@@ -188,20 +188,10 @@ export default function ProfileForm() {
           <Row>
             <Col className="submit-button-wrap" xs="12">
               <ButtonGroup>
-                <Button
-                  outline
-                  onClick={() => {
-                    // do print with react-to-print npm
-                  }}
-                  color="info"
-                >
-                  Print
-                </Button>
                 <Button color="primary" type="submit">
-                  Submit
+                  Update
                 </Button>
                 <Button
-                  outline
                   onClick={() => {
                     history.push("/print-and-preview");
                   }}
