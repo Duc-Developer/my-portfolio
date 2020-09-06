@@ -13,6 +13,7 @@ import ExperienceForm from "../ExperienceForm";
 import SpecialForm from "../SpecialForm";
 import { useDispatch } from "react-redux";
 import { createMyCv } from "../../../actions";
+import { useHistory } from "react-router-dom";
 
 const defaultValues = {
   email: "",
@@ -48,6 +49,7 @@ export default function ProfileForm() {
   const [imgUrl, setImg] = useState(defaultAvatar);
   const [mobiStatus, setStatus] = useState(null); //experience, special
   const dispatch = useDispatch();
+  const history = useHistory();
   let imgUpload = useRef(false);
 
   const onSubmit = (data) => {
@@ -201,7 +203,7 @@ export default function ProfileForm() {
                 <Button
                   outline
                   onClick={() => {
-                    // do show CV
+                    history.push("/print-and-preview");
                   }}
                   color="success"
                 >

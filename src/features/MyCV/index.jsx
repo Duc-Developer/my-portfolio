@@ -14,6 +14,7 @@ export default class MyCV extends Component {
 
   render() {
     const {data} = this.props;
+    console.log(this.props)
     return (
       <div className="my-cv">
         <Container>
