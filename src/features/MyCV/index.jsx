@@ -220,39 +220,20 @@ MyCV.defaultProps = {
   rating: "",
   about: "",
   school: "",
-  specialize: "Viễn thông",
-  timeStart: "07/09/2012",
-  timeEnd: "09/06/2017",
-  moreInformation: "sadfsdfsdafasdfasdfsasdfsa",
+  specialize: "",
+  timeStart: "",
+  timeEnd: "",
+  moreInformation: "",
   experience: [
     {
-      time: "09/09/2017",
-      company: "FPT TELECOM",
-      achievements:
-        "Cupidatat ipsum aliquip deserunt dolore labore. Velit ad nulla voluptate eu ut consectetur et amet commodo excepteur irure commodo eiusmod. Consequat eu elit incididunt aute ullamco dolore excepteur aute veniam dolor irure sunt aute incididunt. Adipisicing ipsum est non duis sit duis mollit reprehenderit et.",
-      position: "Sale",
-      id: "dfe-we-ds",
-    },
-    {
-      time: "10/5/2018",
-      company: "Toan phu",
-      achievements:
-        "Cupidatat ipsum aliquip deserunt dolore labore. Velit ad nulla voluptate eu ut consectetur et amet commodo excepteur irure commodo eiusmod. Consequat eu elit incididunt aute ullamco dolore excepteur aute veniam dolor irure sunt aute incididunt. Adipisicing ipsum est non duis sit duis mollit reprehenderit et.",
-      position: "Sale",
-      id: "dfe-we-ddads",
-    },
-    {
-      time: "09/09/2019",
-      company: "FPT daM",
-      achievements:
-        "Hãy giới thiệu về bản thân bạn thường là câu hỏi đầu tiên trong cuộc phỏng vấn. Vượt qua câu hỏi này suôn sẻ bạn sẽ cóthêm tự tin để tiếp tục chinh phục nhà tuyển dụng. Nhiều ứngviên vẫn còn rất “ngây thơ khi đưa ra một phát biểu dài vềtiểu sử của mình, cấp 3 học trường nào, gia đình có baonhiêu người, sở thích là gì?... Đó không phải là câu trả lời",
-      position: "Saleasd",
-      id: "dfaqe-we-ds",
-    },
+      time: "",
+      company: "",
+      achievements: "",
+      position: "",
+      id: "root-id-1221",
+    }
   ],
   special: [
-    { name: "Design", range: 70, id: "daagdfg" },
-    { name: "Coding", range: 70, id: "ddaeqg" },
-    { name: "English", range: 30, id: "dafaeagdfg" },
+    { name: "", range: 0, id: "root-id-1223" }
   ],
 };
