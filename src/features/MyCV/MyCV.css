@@ -30,14 +30,16 @@
 .my-cv-wrap-name-box {
   background-color: tomato;
   position: absolute;
-  bottom: -2em;
+  bottom: -1em;
+  width: 100%;
+  text-align: center;
   padding: 5px;
   border-radius: 20px;
 }
 
 .my-cv-wrap-name-box b {
   color: wheat;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .my-cv-contact-box {

@@ -5,6 +5,7 @@ import Avatar from "../../components/Avatar";
 import ProgressSkill from "../../components/ProgressSkill";
 import TextCard from "../../components/TextCard";
 import PropTypes from "prop-types";
+import defaultAvatar from '../../images/default-placeholder.png'
 
 export default class MyCV extends Component {
   constructor(props) {
@@ -209,17 +210,16 @@ MyCV.propTypes = {
 };
 
 MyCV.defaultProps = {
-  email: "example@gmail.com",
-  fullName: "Trần Trung Đức",
-  phone: "132131344532",
-  address: "Nam Định",
-  image: "https://picsum.photos/200",
-  birthday: "23/03/1994",
-  gender: "nam",
-  rating: "Trung bình",
-  about:
-    "Hãy giới thiệu về bản thân bạn thường là câu hỏi đầu tiên trong cuộc phỏng vấn. Vượt qua câu hỏi này suôn sẻ bạn sẽ cóthêm tự tin để tiếp tục chinh phục nhà tuyển dụng. Nhiều ứngviên vẫn còn rất “ngây thơ khi đưa ra một phát biểu dài vềtiểu sử của mình, cấp 3 học trường nào, gia đình có baonhiêu người, sở thích là gì?... Đó không phải là câu trả lời",
-  school: "Bưu chính viễn thông",
+  email: "",
+  fullName: "Your Name",
+  phone: "",
+  address: "",
+  image: defaultAvatar,
+  birthday: "",
+  gender: "",
+  rating: "",
+  about: "",
+  school: "",
   specialize: "Viễn thông",
   timeStart: "07/09/2012",
   timeEnd: "09/06/2017",
