@@ -26,10 +26,10 @@ export const MyCVPrint = () => {
         }}
       >
         <Button color="success" onClick={handlePrint}>
-          <i className="fas fa-print fa-3x">{" Print"}</i>
+          <i className="fas fa-print fa-2x">{" Print"}</i>
         </Button>
         <Button onClick={history.goBack}>
-          <i className="fas fa-undo fa-3x">{" Back"}</i>
+          <i className="fas fa-undo fa-2x">{" Back"}</i>
         </Button>
       </div>
     </div>
