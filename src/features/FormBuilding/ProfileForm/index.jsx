@@ -14,6 +14,7 @@ import SpecialForm from '../SpecialForm'
 
 const defaultValues = {
     email: "",
+    fullName: "",
     phone: "",
     address: "",
     avatar: {},
