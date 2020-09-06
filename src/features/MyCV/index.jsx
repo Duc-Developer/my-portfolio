@@ -10,7 +10,6 @@ import defaultAvatar from '../../images/default-placeholder.png'
 export default class MyCV extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
   }
 
   render() {
