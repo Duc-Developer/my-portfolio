@@ -5,7 +5,7 @@ import Avatar from "../../components/Avatar";
 import ProgressSkill from "../../components/ProgressSkill";
 import TextCard from "../../components/TextCard";
 import PropTypes from "prop-types";
-import defaultAvatar from '../../images/default-placeholder.png'
+import defaultAvatar from "../../images/default-placeholder.png";
 
 export default class MyCV extends Component {
   constructor(props) {
@@ -13,15 +13,16 @@ export default class MyCV extends Component {
   }
 
   render() {
+    const {data} = this.props;
     return (
       <div className="my-cv">
         <Container>
           <Row>
             <Col xs="12" md="4" className="my-cv-side-page-left">
               <div id="my-cv-wrap-avata-name-box">
-                <Avatar src={this.props.image} alt="my-avatar" size={250} />
+                <Avatar src={data.image} alt="my-avatar" size={250} />
                 <div className="my-cv-wrap-name-box">
-                  <b>{this.props.fullName}</b>
+                  <b>{data.fullName}</b>
                 </div>
               </div>
               <div className="my-cv-contact-box">
@@ -40,7 +41,7 @@ export default class MyCV extends Component {
                         />
                       </Col>
                       <Col xs="9">
-                        <p>{this.props.email}</p>
+                        <p>{data.email}</p>
                       </Col>
                     </Row>
                   </Col>
@@ -53,7 +54,7 @@ export default class MyCV extends Component {
                         />
                       </Col>
                       <Col xs="9">
-                        <p>{this.props.phone}</p>
+                        <p>{data.phone}</p>
                       </Col>
                     </Row>
                   </Col>
@@ -66,7 +67,7 @@ export default class MyCV extends Component {
                         />
                       </Col>
                       <Col xs="9">
-                        <p>{this.props.address}</p>
+                        <p>{data.address}</p>
                       </Col>
                     </Row>
                   </Col>
@@ -79,14 +80,14 @@ export default class MyCV extends Component {
                         />
                       </Col>
                       <Col xs="9">
-                        <p>{this.props.gender}</p>
+                        <p>{data.gender}</p>
                       </Col>
                     </Row>
                   </Col>
                 </Row>
               </div>
               <div className="my-cv-progress-special">
-                {this.props.special.map((item) => {
+                {data.special.map((item) => {
                   return (
                     <ProgressSkill
                       key={item.id}
@@ -108,7 +109,7 @@ export default class MyCV extends Component {
                   {" Giới thiệu bản thân"}
                 </i>
                 <div className="my-cv-about-box-content">
-                  <span>{this.props.about}</span>
+                  <span>{data.about}</span>
                 </div>
               </div>
               <div className="my-cv-education-box">
@@ -126,7 +127,7 @@ export default class MyCV extends Component {
                     >
                       {" Trường: "}
                     </i>
-                    <h2>{this.props.school}</h2>
+                    <h2>{data.school}</h2>
                   </div>
                   <div>
                     <i
@@ -135,7 +136,7 @@ export default class MyCV extends Component {
                     >
                       {" Chuyên ngành: "}
                     </i>
-                    <h2>{this.props.specialize}</h2>
+                    <h2>{data.specialize}</h2>
                   </div>
                   <div>
                     <i
@@ -144,7 +145,7 @@ export default class MyCV extends Component {
                     >
                       {" Học lực: "}
                     </i>
-                    <h2>{this.props.rating}</h2>
+                    <h2>{data.rating}</h2>
                   </div>
                   <div>
                     <i
@@ -154,7 +155,7 @@ export default class MyCV extends Component {
                       {" Thời gian: "}
                     </i>
                     <h2>
-                      {`${this.props.timeStart} -> ${this.props.timeEnd}`}
+                      {`${data.timeStart} -> ${data.timeEnd}`}
                     </h2>
                   </div>
                 </div>
@@ -166,7 +167,7 @@ export default class MyCV extends Component {
                 >
                   {" KINH NGHIỆM"}
                 </i>
-                {this.props.experience.map((item) => {
+                {data.experience.map((item) => {
                   return (
                     <TextCard
                       key={item.id}
@@ -190,49 +191,34 @@ export default class MyCV extends Component {
 }
 
 MyCV.propTypes = {
-  email: PropTypes.string,
-  fullName: PropTypes.string,
-  phone: PropTypes.string,
-  address: PropTypes.string,
-  image: PropTypes.string,
-  birthday: PropTypes.string,
-  gender: PropTypes.string,
-  rating: PropTypes.string,
-  about: PropTypes.string,
-  school: PropTypes.string,
-  specialize: PropTypes.string,
-  timeStart: PropTypes.string,
-  timeEnd: PropTypes.string,
-  moreInformation: PropTypes.string,
-  experience: PropTypes.array,
-  special: PropTypes.array,
+  data: PropTypes.object,
 };
 
 MyCV.defaultProps = {
-  email: "",
-  fullName: "Your Name",
-  phone: "",
-  address: "",
-  image: defaultAvatar,
-  birthday: "",
-  gender: "",
-  rating: "",
-  about: "",
-  school: "",
-  specialize: "",
-  timeStart: "",
-  timeEnd: "",
-  moreInformation: "",
-  experience: [
-    {
-      time: "",
-      company: "",
-      achievements: "",
-      position: "",
-      id: "root-id-1221",
-    }
-  ],
-  special: [
-    { name: "", range: 0, id: "root-id-1223" }
-  ],
+  data: {
+    email: "",
+    fullName: "Your Name",
+    phone: "",
+    address: "",
+    image: defaultAvatar,
+    birthday: "",
+    gender: "",
+    rating: "",
+    about: "",
+    school: "",
+    specialize: "",
+    timeStart: "",
+    timeEnd: "",
+    moreInformation: "",
+    experience: [
+      {
+        time: "",
+        company: "",
+        achievements: "",
+        position: "",
+        id: "root-id-1221",
+      },
+    ],
+    special: [{ name: "", range: 0, id: "root-id-1223" }],
+  },
 };
