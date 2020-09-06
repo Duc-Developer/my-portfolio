@@ -1,0 +1,46 @@
+.text-card {
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+  height: 420px;
+  margin-bottom: 1em;
+}
+
+.text-card-line-left {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-card-box-content {
+  flex-grow: 1;
+  margin-left: 1em;
+}
+
+.text-card-header {
+  width: 100%;
+  padding-left: 2em;
+  border-radius: 20px;
+}
+
+.text-card-content {
+  text-align: justify;
+  width: 90%;
+  text-indent: 5%;
+  height: 300px;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.text-card-subline i {
+  background-color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+}
+
+.text-card-content::-webkit-scrollbar {
+  display: none;
+}
