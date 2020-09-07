@@ -194,7 +194,7 @@ export default function ProfileForm() {
                 </Button>
                 <Button
                   onClick={() => {
-                    history.push("/print-and-preview");
+                    history.push("/form-building/print-and-preview");
                   }}
                   color="success"
                 >

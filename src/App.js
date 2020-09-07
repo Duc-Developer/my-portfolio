@@ -17,7 +17,7 @@ function App() {
           <Route exact path="/form-building">
             <ProfileForm />
           </Route>
-          <Route exact path="/print-and-preview">
+          <Route exact path="/form-building/print-and-preview">
             <MyCVPrint />
           </Route>
         </Switch>
