@@ -29,40 +29,39 @@ import { createMyCv } from "../../../actions";
 import { useHistory, NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import * as firebase from "firebase";
-import { database } from "../../../firebase";
 
-const defaultProfile = {
-  uid: null,
-  email: "",
-  fullName: "",
-  phone: "",
-  address: "",
-  avatar: null,
-  birthday: "",
-  gender: "nam",
-  rating: "",
-  about: "",
-  school: "",
-  specialize: "",
-  timeStart: "",
-  timeEnd: "",
-  moreInformation: "",
-  experience: [
-    {
-      time: "",
-      company: "",
-      achievements: "",
-      position: "",
-      id: ids.generate(),
-    },
-  ],
-  special: [{ name: "", range: 0, id: ids.generate() }],
-};
+// const defaultValues = {
+//   uid: null,
+//   email: "",
+//   fullName: "",
+//   phone: "",
+//   address: "",
+//   avatar: null,
+//   birthday: "",
+//   gender: "nam",
+//   rating: "",
+//   about: "",
+//   school: "",
+//   specialize: "",
+//   timeStart: "",
+//   timeEnd: "",
+//   moreInformation: "",
+//   experience: [
+//     {
+//       time: "",
+//       company: "",
+//       achievements: "",
+//       position: "",
+//       id: ids.generate(),
+//     },
+//   ],
+//   special: [{ name: "", range: 0, id: ids.generate() }],
+// };
 
-export default function ProfileForm() {
-  const [defaultValues, setDefaultValues] = useState(defaultProfile);
+export default function ProfileForm(props) {
+  const { defaultValues} = props;
   const { control, handleSubmit, errors, setValue } = useForm({
-    defaultValues,
+    defaultValues
   });
   const [imgUrl, setImg] = useState(defaultAvatar);
   const [mobiStatus, setStatus] = useState(null); //experience, special
@@ -84,18 +83,6 @@ export default function ProfileForm() {
     imgUpload.current.click();
   };
 
-  // async function getData() {
-  //   if (userCurrent) {
-  //     let result = await database
-  //       .ref("users/" + userCurrent.uid)
-  //       .once("value")
-  //       .then((snap) => snap.val());
-  //     if (result) {
-  //       setDefaultValues(result);
-  //     }
-  //   }
-  // }
-
   useEffect(() => {
     firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
@@ -105,9 +92,8 @@ export default function ProfileForm() {
         return;
       }
     });
-    // getData();
-  }, [userCurrent, defaultValues.uid]);
-  console.log(defaultValues);
+  }, [userCurrent]);
+
   return (
     <div className="profile-form">
       <Navbar
