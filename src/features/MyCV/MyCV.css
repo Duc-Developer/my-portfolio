@@ -156,6 +156,7 @@
     margin-top: 5rem;
     border-radius: 20px;
     overflow: hidden;
+    width: 100%;
   }
 
   .my-cv-title-box {
@@ -164,7 +165,7 @@
   }
 
   .my-cv-title-box span {
-    font-size: 2em;
+    font-size: 1em;
   }
 
   .my-cv-title-box Row {
@@ -205,12 +206,19 @@
     margin-top: 2em;
     display: flex;
     flex-direction: column;
-    height: 200px;
     justify-content: space-between;
   }
 
   .my-cv-education-box-content div {
     display: flex;
+  }
+
+  .my-cv-education-box-content div h2 {
+    font-size:1em
+  }
+
+  .my-cv-education-box-content div .my-cv-icon-mobile {
+    font-size:1em
   }
 
   .my-cv-experience-box {
@@ -219,5 +227,9 @@
 
   .my-cv-experience-box > i {
     margin-bottom: 0.5em;
+  }
+
+  .my-cv-icon-mobile {
+    font-size: 1.5em
   }
 }

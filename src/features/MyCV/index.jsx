@@ -43,7 +43,7 @@ export default class MyCV extends Component {
           <Row>
             <Col xs="12" md="4" className="my-cv-side-page-left">
               <div id="my-cv-wrap-avata-name-box">
-                <Avatar src={data.image} alt="my-avatar" size={250} />
+                <Avatar src={data.image} alt="my-avatar" size={230} />
                 <div className="my-cv-wrap-name-box">
                   <b>{data.fullName}</b>
                 </div>
@@ -57,52 +57,52 @@ export default class MyCV extends Component {
                   </Col>
                   <Col xs="12">
                     <Row>
-                      <Col style={{ textAlign: "center" }} xs="3">
+                      <Col style={{ textAlign: "center" }} xs="12" xl="3">
                         <i
                           style={{ color: "rgb(142, 206, 210)" }}
-                          className="fas fa-envelope fa-2x"
+                          className="fas fa-envelope fa-2x my-cv-icon-mobile"
                         />
                       </Col>
-                      <Col xs="9">
+                      <Col style={{ textAlign: "center" }} xs="12" xl="9">
                         <p>{data.email}</p>
                       </Col>
                     </Row>
                   </Col>
                   <Col xs="12">
                     <Row>
-                      <Col style={{ textAlign: "center" }} xs="3">
+                      <Col style={{ textAlign: "center" }} xs="12" xl="3">
                         <i
                           style={{ color: "rgb(142, 206, 210)" }}
-                          className="fas fa-mobile-alt fa-2x"
+                          className="fas fa-mobile-alt fa-2x my-cv-icon-mobile"
                         />
                       </Col>
-                      <Col xs="9">
+                      <Col style={{ textAlign: "center" }} xs="12" xl="9">
                         <p>{data.phone}</p>
                       </Col>
                     </Row>
                   </Col>
                   <Col xs="12">
                     <Row>
-                      <Col style={{ textAlign: "center" }} xs="3">
+                      <Col style={{ textAlign: "center" }} xs="12" xl="3">
                         <i
                           style={{ color: "rgb(142, 206, 210)" }}
-                          className="fas fa-map-marker-alt fa-2x"
+                          className="fas fa-map-marker-alt fa-2x my-cv-icon-mobile"
                         />
                       </Col>
-                      <Col xs="9">
+                      <Col style={{ textAlign: "center" }} xs="12" xl="9">
                         <p>{data.address}</p>
                       </Col>
                     </Row>
                   </Col>
                   <Col xs="12">
                     <Row>
-                      <Col style={{ textAlign: "center" }} xs="3">
+                      <Col style={{ textAlign: "center" }} xs="12" xl="3">
                         <i
                           style={{ color: "rgb(142, 206, 210)" }}
-                          className="fas fa-venus-mars fa-2x"
+                          className="fas fa-venus-mars fa-2x my-cv-icon-mobile"
                         />
                       </Col>
-                      <Col xs="9">
+                      <Col style={{ textAlign: "center" }} xs="12" xl="9">
                         <p>{data.gender}</p>
                       </Col>
                     </Row>
@@ -126,7 +126,7 @@ export default class MyCV extends Component {
               <div className="my-cv-about-box">
                 <i
                   style={{ color: "#8B008B" }}
-                  className="fas fa-address-card fa-3x"
+                  className="fas fa-address-card fa-3x my-cv-icon-mobile"
                 >
                   {" Giới thiệu bản thân"}
                 </i>
@@ -137,7 +137,7 @@ export default class MyCV extends Component {
               <div className="my-cv-education-box">
                 <i
                   style={{ color: "#8B008B" }}
-                  className="fas fa-graduation-cap fa-3x"
+                  className="fas fa-graduation-cap fa-3x my-cv-icon-mobile"
                 >
                   {" HỌC VẤN"}
                 </i>
@@ -145,7 +145,7 @@ export default class MyCV extends Component {
                   <div>
                     <i
                       style={{ color: "tomato" }}
-                      className="fas fa-school fa-2x"
+                      className="fas fa-school fa-2x my-cv-icon-mobile"
                     >
                       {" Trường: "}
                     </i>
@@ -154,7 +154,7 @@ export default class MyCV extends Component {
                   <div>
                     <i
                       style={{ color: "tomato" }}
-                      className="fas fa-code-branch fa-2x"
+                      className="fas fa-code-branch fa-2x my-cv-icon-mobile"
                     >
                       {" Chuyên ngành: "}
                     </i>
@@ -163,7 +163,7 @@ export default class MyCV extends Component {
                   <div>
                     <i
                       style={{ color: "tomato" }}
-                      className="fas fa-star-half-alt fa-2x"
+                      className="fas fa-star-half-alt fa-2x my-cv-icon-mobile"
                     >
                       {" Học lực: "}
                     </i>
@@ -172,7 +172,7 @@ export default class MyCV extends Component {
                   <div>
                     <i
                       style={{ color: "tomato" }}
-                      className="fas fa-clock fa-2x"
+                      className="fas fa-clock fa-2x my-cv-icon-mobile"
                     >
                       {" Thời gian: "}
                     </i>
@@ -183,7 +183,7 @@ export default class MyCV extends Component {
               <div className="my-cv-experience-box">
                 <i
                   style={{ color: "#8B008B" }}
-                  className="fas fa-align-left fa-3x"
+                  className="fas fa-align-left fa-3x my-cv-icon-mobile"
                 >
                   {" KINH NGHIỆM"}
                 </i>
