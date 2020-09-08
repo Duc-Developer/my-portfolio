@@ -11,6 +11,7 @@ import {
   Nav,
   NavItem,
 } from "reactstrap";
+import * as ids from "short-id";
 import Avatar from "../../../components/Avatar";
 import defaultAvatar from "../../../images/default-placeholder.png";
 import "./ProfileForm.css";
@@ -28,8 +29,10 @@ import { createMyCv } from "../../../actions";
 import { useHistory, NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import * as firebase from "firebase";
+import { database } from "../../../firebase";
 
-const defaultValues = {
+const defaultProfile = {
+  uid: null,
   email: "",
   fullName: "",
   phone: "",
@@ -50,13 +53,14 @@ const defaultValues = {
       company: "",
       achievements: "",
       position: "",
-      id: "dfeeds",
+      id: ids.generate(),
     },
   ],
-  special: [{ name: "", range: 0, id: "daagdfg" }],
+  special: [{ name: "", range: 0, id: ids.generate() }],
 };
 
 export default function ProfileForm() {
+  const [defaultValues, setDefaultValues] = useState(defaultProfile);
   const { control, handleSubmit, errors, setValue } = useForm({
     defaultValues,
   });
@@ -68,15 +72,29 @@ export default function ProfileForm() {
   let imgUpload = useRef(false);
 
   const onSubmit = (data) => {
-    dispatch(createMyCv({
-      ...data,
-      uid: userCurrent.uid
-    }));
+    dispatch(
+      createMyCv({
+        ...data,
+        uid: userCurrent.uid,
+      })
+    );
   };
 
   const handleClickImg = () => {
     imgUpload.current.click();
   };
+
+  // async function getData() {
+  //   if (userCurrent) {
+  //     let result = await database
+  //       .ref("users/" + userCurrent.uid)
+  //       .once("value")
+  //       .then((snap) => snap.val());
+  //     if (result) {
+  //       setDefaultValues(result);
+  //     }
+  //   }
+  // }
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged(function (user) {
@@ -87,8 +105,9 @@ export default function ProfileForm() {
         return;
       }
     });
-  }, [userCurrent]);
-
+    // getData();
+  }, [userCurrent, defaultValues.uid]);
+  console.log(defaultValues);
   return (
     <div className="profile-form">
       <Navbar
