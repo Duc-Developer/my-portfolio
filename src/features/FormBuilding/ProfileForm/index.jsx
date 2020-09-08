@@ -11,7 +11,6 @@ import {
   Nav,
   NavItem,
 } from "reactstrap";
-import * as ids from "short-id";
 import Avatar from "../../../components/Avatar";
 import defaultAvatar from "../../../images/default-placeholder.png";
 import "./ProfileForm.css";

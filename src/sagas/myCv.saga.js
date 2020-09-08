@@ -5,7 +5,6 @@ import { database, storage } from '../firebase';
 
 function* createMyCv(action) {
     const { payload } = action;
-    let urlRes;
     if (!payload.avatar) {
         yield database.ref(`users/${payload.uid}`)
             .update({
@@ -22,7 +21,7 @@ function* createMyCv(action) {
             (snapshot) => { },
             (error) => { if (error) { console.log(error.code) } },
             () => {
-                urlRes = uploadTask.snapshot
+                uploadTask.snapshot
                     .ref
                     .getDownloadURL()
                     .then(url => {
@@ -35,8 +34,8 @@ function* createMyCv(action) {
             }
         );
         let avatarRes = yield database.ref("users/" + payload.uid + "/avatar")
-                                .once("value")
-                                .then(snapshot => snapshot.val());
+            .once("value")
+            .then(snapshot => snapshot.val());
         yield put(createMyCvSuccess({
             ...payload,
             avatar: avatarRes
