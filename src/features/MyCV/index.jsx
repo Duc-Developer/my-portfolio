@@ -6,35 +6,36 @@ import ProgressSkill from "../../components/ProgressSkill";
 import TextCard from "../../components/TextCard";
 import PropTypes from "prop-types";
 import defaultAvatar from "../../images/default-placeholder.png";
-import firebase from 'firebase';
-import { database } from '../../firebase';
+import firebase from "firebase";
+import { database } from "../../firebase";
 
 export default class MyCV extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      data: null
+      data: null,
     };
   }
 
   componentDidMount() {
-    firebase.auth().onAuthStateChanged(user => {
-      if(user) {
-        database.ref("users/" + user.uid)
-                .once("value")
-                .then(snap => {
-                  this.setState({
-                    ...this.state,
-                    data: snap.val()
-                  })
-                })
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        database
+          .ref("users/" + user.uid)
+          .once("value")
+          .then((snap) => {
+            this.setState({
+              ...this.state,
+              data: snap.val(),
+            });
+          });
       }
     });
   }
 
   render() {
-    const {data} = !this.state.data ? this.props : this.state;
+    const { data } = !this.state.data ? this.props : this.state;
 
     return (
       <div className="my-cv">
@@ -131,7 +132,7 @@ export default class MyCV extends Component {
                   {" Giới thiệu bản thân"}
                 </i>
                 <div className="my-cv-about-box-content">
-                  <span>{data.about}</span>
+                  <span style={{ whiteSpace: "pre-line" }}>{data.about}</span>
                 </div>
               </div>
               <div className="my-cv-education-box">
@@ -176,9 +177,7 @@ export default class MyCV extends Component {
                     >
                       {" Thời gian: "}
                     </i>
-                    <h2>
-                      {`${data.timeStart} -> ${data.timeEnd}`}
-                    </h2>
+                    <h2>{`${data.timeStart} -> ${data.timeEnd}`}</h2>
                   </div>
                 </div>
               </div>
