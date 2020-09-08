@@ -117,7 +117,6 @@ export default class MyCV extends Component {
                       range={JSON.parse(item.range)}
                       skill={item.name}
                       labelColor="white"
-                      width="calc(25vw)"
                     />
                   );
                 })}
@@ -132,7 +131,7 @@ export default class MyCV extends Component {
                   {" Giới thiệu bản thân"}
                 </i>
                 <div className="my-cv-about-box-content">
-                  <span style={{ whiteSpace: "pre-line" }}>{data.about}</span>
+                  <span style={{ whiteSpace: "pre-line"}}>{data.about}</span>
                 </div>
               </div>
               <div className="my-cv-education-box">

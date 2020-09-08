@@ -64,7 +64,8 @@
 
 .my-cv-progress-special {
     margin-top: 2rem;
-    max-width: calc(25vw);
+    width: 100%;
+    /* max-width: calc(25vw); */
 }
 
 .my-cv-about-box {
@@ -77,7 +78,7 @@
   border-radius: 20px;
   padding: 1em;
   text-align: justify;
-  text-indent: 5%;
+  /* text-indent: 5%; */
 }
 
 .my-cv-education-box {
