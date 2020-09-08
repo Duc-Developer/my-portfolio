@@ -7,6 +7,7 @@ import {
   Switch
 } from "react-router-dom";
 import { MyCVPrint } from './features/MyCV/MyCVPrint';
+import Login from './auth/Login';
 
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
           </Route>
           <Route exact path="/form-building/print-and-preview">
             <MyCVPrint />
+          </Route>
+          <Route exact path="/login">
+            <Login />
           </Route>
         </Switch>
       </Router>

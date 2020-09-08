@@ -1,7 +1,11 @@
 .profile-form {
     font-size: large;
-    padding-top: calc(5vh);
-    padding-bottom: calc(5vh);
+    padding-top: calc(10vh);
+    padding-bottom: calc(10vh);
+}
+
+.nav-main-form-building {
+    border-bottom: 1px solid #aaaaaa;
 }
 
 .avatar-container {

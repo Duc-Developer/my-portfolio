@@ -1,5 +1,16 @@
 import React from "react";
-import { Container, Row, Col, Button, ButtonGroup } from "reactstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Button,
+  ButtonGroup,
+  Navbar,
+  NavbarBrand,
+  NavbarText,
+  Nav,
+  NavItem,
+} from "reactstrap";
 import defaultAvatar from "../../../images/default-placeholder.png";
 import "./ProfileForm.css";
 import { useForm } from "react-hook-form";
@@ -13,7 +24,9 @@ import ExperienceForm from "../ExperienceForm";
 import SpecialForm from "../SpecialForm";
 import { useDispatch } from "react-redux";
 import { createMyCv } from "../../../actions";
-import { useHistory } from "react-router-dom";
+import { useHistory, NavLink } from "react-router-dom";
+import { useEffect } from "react";
+import * as firebase from "firebase";
 
 const defaultValues = {
   email: "",
@@ -48,6 +61,7 @@ export default function ProfileForm() {
   });
   const [imgUrl, setImg] = useState(defaultAvatar);
   const [mobiStatus, setStatus] = useState(null); //experience, special
+  const [userCurrent, setUserCurrent] = useState(null);
   const dispatch = useDispatch();
   const history = useHistory();
   let imgUpload = useRef(false);
@@ -60,8 +74,35 @@ export default function ProfileForm() {
     imgUpload.current.click();
   };
 
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        setUserCurrent(user);
+      } else {
+        history.push("/");
+      }
+    });
+  }, [userCurrent]);
+
   return (
     <div className="profile-form">
+      <Navbar
+        className="nav-main-form-building"
+        color="light"
+        light
+        fixed="top"
+        expand="md"
+      >
+        <NavbarBrand href="/">Home</NavbarBrand>
+        <Nav className="mr-auto" navbar>
+          <NavItem>
+            <NavLink to="/form-building/print-and-preview">
+              PreView
+            </NavLink>
+          </NavItem>
+        </Nav>
+        <NavbarText>Simple Text</NavbarText>
+      </Navbar>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Container>
           <Row>
