@@ -6,15 +6,36 @@ import ProgressSkill from "../../components/ProgressSkill";
 import TextCard from "../../components/TextCard";
 import PropTypes from "prop-types";
 import defaultAvatar from "../../images/default-placeholder.png";
+import firebase from 'firebase';
+import { database } from '../../firebase';
 
 export default class MyCV extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      data: null
+    };
+  }
+
+  componentDidMount() {
+    firebase.auth().onAuthStateChanged(user => {
+      if(user) {
+        database.ref("users/" + user.uid)
+                .once("value")
+                .then(snap => {
+                  this.setState({
+                    ...this.state,
+                    data: snap.val()
+                  })
+                })
+      }
+    });
   }
 
   render() {
-    const {data} = this.props;
-    console.log(this.props)
+    const {data} = !this.state.data ? this.props : this.state;
+
     return (
       <div className="my-cv">
         <Container>
@@ -92,7 +113,7 @@ export default class MyCV extends Component {
                   return (
                     <ProgressSkill
                       key={item.id}
-                      range={item.range}
+                      range={JSON.parse(item.range)}
                       skill={item.name}
                       labelColor="white"
                       width="calc(25vw)"
