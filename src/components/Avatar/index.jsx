@@ -12,7 +12,7 @@ Avatar.propTypes = {
 Avatar.defaultProps = {
     border: "2px solid #aaaaaa",
     src: defaultAvatar,
-    size: 36
+    size: 48
 }
 
 export default function Avatar(props) {

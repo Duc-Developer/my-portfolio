@@ -1,11 +1,15 @@
 .profile-form {
     font-size: large;
-    padding-top: calc(10vh);
+    padding-top: calc(15vh);
     padding-bottom: calc(10vh);
 }
 
 .nav-main-form-building {
     border-bottom: 1px solid #aaaaaa;
+}
+
+.nav-bar-form-building-wrap {
+    display: flex;
 }
 
 .avatar-container {
@@ -52,8 +56,8 @@
 @media only screen and (max-width: 767px) {
     .profile-form {
         font-size: large;
-        padding-top: calc(5vh);
-        padding-bottom: calc(5vh);
+        padding-top: calc(15vh);
+        padding-bottom: calc(10vh);
     }
     
     .avatar-container {

@@ -14,7 +14,7 @@ ui.start("#firebaseui-auth-container", {
       document.getElementById("loader").style.display = "none";
     },
     signInSuccessWithAuthResult: function (authResult, redirectUrl) {
-      localStorage.setItem("token", authResult.credential.accessToken);
+      // localStorage.setItem("token", authResult.credential.accessToken);
       return true;
     },
   },

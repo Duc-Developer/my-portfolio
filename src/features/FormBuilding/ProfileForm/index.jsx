@@ -11,6 +11,7 @@ import {
   Nav,
   NavItem,
 } from "reactstrap";
+import Avatar from "../../../components/Avatar";
 import defaultAvatar from "../../../images/default-placeholder.png";
 import "./ProfileForm.css";
 import { useForm } from "react-hook-form";
@@ -33,7 +34,7 @@ const defaultValues = {
   fullName: "",
   phone: "",
   address: "",
-  avatar: {},
+  avatar: null,
   birthday: "",
   gender: "nam",
   rating: "",
@@ -67,7 +68,10 @@ export default function ProfileForm() {
   let imgUpload = useRef(false);
 
   const onSubmit = (data) => {
-    dispatch(createMyCv(data));
+    dispatch(createMyCv({
+      ...data,
+      uid: userCurrent.uid
+    }));
   };
 
   const handleClickImg = () => {
@@ -80,6 +84,7 @@ export default function ProfileForm() {
         setUserCurrent(user);
       } else {
         history.push("/");
+        return;
       }
     });
   }, [userCurrent]);
@@ -96,12 +101,22 @@ export default function ProfileForm() {
         <NavbarBrand href="/">Home</NavbarBrand>
         <Nav className="mr-auto" navbar>
           <NavItem>
-            <NavLink to="/form-building/print-and-preview">
-              PreView
-            </NavLink>
+            <NavLink to="/form-building/print-and-preview">PreView</NavLink>
           </NavItem>
         </Nav>
-        <NavbarText>Simple Text</NavbarText>
+        <NavbarText>
+          <div className="nav-bar-form-building-wrap">
+            <Avatar src={!userCurrent ? defaultAvatar : userCurrent.photoURL} />
+            <Button
+              onClick={() => {
+                firebase.auth().signOut();
+              }}
+              color="link"
+            >
+              Đăng xuất
+            </Button>
+          </div>
+        </NavbarText>
       </Navbar>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Container>
