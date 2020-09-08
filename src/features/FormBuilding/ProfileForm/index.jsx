@@ -58,11 +58,13 @@ import * as firebase from "firebase";
 // };
 
 export default function ProfileForm(props) {
-  const { defaultValues} = props;
+  const { defaultValues } = props;
   const { control, handleSubmit, errors, setValue } = useForm({
-    defaultValues
+    defaultValues,
   });
-  const [imgUrl, setImg] = useState(defaultAvatar);
+  const [imgUrl, setImg] = useState(
+    !defaultValues.avatar ? defaultAvatar : defaultValues.avatar
+  );
   const [mobiStatus, setStatus] = useState(null); //experience, special
   const [userCurrent, setUserCurrent] = useState(null);
   const dispatch = useDispatch();

@@ -3,7 +3,6 @@ import { useReactToPrint } from "react-to-print";
 import MyCV from "..";
 import { Button } from "reactstrap";
 import { useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
 
 export const MyCVPrint = () => {
   const componentRef = useRef(null);
@@ -11,7 +10,6 @@ export const MyCVPrint = () => {
     content: () => componentRef.current,
   });
   const myProfile = useSelector((state) => state.myCv.profile);
-  const history = useHistory();
 
   return (
     <div>
@@ -28,7 +26,7 @@ export const MyCVPrint = () => {
         <Button color="success" onClick={handlePrint}>
           <i className="fas fa-print fa-2x">{" Print"}</i>
         </Button>
-        <Button onClick={history.goBack}>
+        <Button onClick={() => {window.history.back()}}>
           <i className="fas fa-undo fa-2x">{" Back"}</i>
         </Button>
       </div>

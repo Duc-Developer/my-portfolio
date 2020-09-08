@@ -43,7 +43,7 @@ export default class MyCV extends Component {
           <Row>
             <Col xs="12" md="4" className="my-cv-side-page-left">
               <div id="my-cv-wrap-avata-name-box">
-                <Avatar src={data.image} alt="my-avatar" size={230} />
+                <Avatar src={data.avatar} alt="my-avatar" size={230} />
                 <div className="my-cv-wrap-name-box">
                   <b>{data.fullName}</b>
                 </div>
@@ -64,7 +64,7 @@ export default class MyCV extends Component {
                         />
                       </Col>
                       <Col style={{ textAlign: "center" }} xs="12" xl="9">
-                        <p>{data.email}</p>
+                        <div><p>{data.email}</p></div>
                       </Col>
                     </Row>
                   </Col>
@@ -77,7 +77,7 @@ export default class MyCV extends Component {
                         />
                       </Col>
                       <Col style={{ textAlign: "center" }} xs="12" xl="9">
-                        <p>{data.phone}</p>
+                        <div><p>{data.phone}</p></div>
                       </Col>
                     </Row>
                   </Col>
@@ -90,7 +90,7 @@ export default class MyCV extends Component {
                         />
                       </Col>
                       <Col style={{ textAlign: "center" }} xs="12" xl="9">
-                        <p>{data.address}</p>
+                        <div><p>{data.address}</p></div>
                       </Col>
                     </Row>
                   </Col>
@@ -103,7 +103,7 @@ export default class MyCV extends Component {
                         />
                       </Col>
                       <Col style={{ textAlign: "center" }} xs="12" xl="9">
-                        <p>{data.gender}</p>
+                        <div><p>{data.gender}</p></div>
                       </Col>
                     </Row>
                   </Col>
