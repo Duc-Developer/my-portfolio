@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import defaultAvatar from "../../images/default-placeholder.png";
 
 Avatar.propTypes = {
     src: PropTypes.string,
@@ -9,7 +10,9 @@ Avatar.propTypes = {
 }
 
 Avatar.defaultProps = {
-    border: "2px solid #aaaaaa"
+    border: "2px solid #aaaaaa",
+    src: defaultAvatar,
+    size: 36
 }
 
 export default function Avatar(props) {
