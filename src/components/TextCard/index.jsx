@@ -57,7 +57,7 @@ export default function TextCard(props) {
                 </i>
             </div>
             <div className="text-card-title">
-                <b style={{ fontSize: `${1.5 * fontSize}em` }} >
+                <b style={{ fontSize: `${fontSize}em` }} >
                     {title}
                 </b>
             </div>
