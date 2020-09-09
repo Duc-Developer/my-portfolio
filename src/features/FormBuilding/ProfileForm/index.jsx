@@ -29,8 +29,9 @@ import { useHistory, NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import * as firebase from "firebase";
 import ProjectForm from "../ProjectForm";
+import KnowledgesForm from "../KnowLedgesForm";
 
-// const defaultValues = {
+// const userSchema = {
 //   uid: null,
 //   email: "",
 //   fullName: "",
@@ -56,6 +57,10 @@ import ProjectForm from "../ProjectForm";
 //     },
 //   ],
 //   special: [{ name: "", range: 0, id: ids.generate() }],
+//   knowledges: ["google ads", "photoshop"],
+//   project: [
+//     { name: "", github: "", website: "", id: ids.generate(), information: "" },
+//   ],
 // };
 
 export default function ProfileForm(props) {
@@ -73,12 +78,13 @@ export default function ProfileForm(props) {
   let imgUpload = useRef(false);
 
   const onSubmit = (data) => {
-    dispatch(
-      createMyCv({
-        ...data,
-        uid: userCurrent.uid,
-      })
-    );
+    // dispatch(
+    //   createMyCv({
+    //     ...data,
+    //     uid: userCurrent.uid,
+    //   })
+    // );
+    console.log(data);
   };
 
   const handleClickImg = () => {
@@ -250,10 +256,10 @@ export default function ProfileForm(props) {
           </Row>
           <Row>
             <Col xs="12" lg="8">
-              <ProjectForm control={control} setValue={setValue}/>
+              <ProjectForm control={control} setValue={setValue} />
             </Col>
             <Col xs="12" lg="4">
-              yout knowledges here
+              <KnowledgesForm control={control} setValue={setValue} />
             </Col>
           </Row>
 
