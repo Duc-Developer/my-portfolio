@@ -13,34 +13,44 @@ function* createMyCv(action) {
             });
         yield put(createMyCvSuccess(payload));
         return;
-    } else {
-        let uploadTask = storage.ref("images/")
-            .child(payload.uid)
-            .put(payload.avatar);
-        yield uploadTask.on('state_changed',
-            (snapshot) => { },
-            (error) => { if (error) { console.log(error.code) } },
-            () => {
-                uploadTask.snapshot
-                    .ref
-                    .getDownloadURL()
-                    .then(url => {
-                        database.ref(`users/${payload.uid}`)
-                            .update({
-                                ...payload,
-                                avatar: url
-                            });
-                    })
-            }
-        );
-        let avatarRes = yield database.ref("users/" + payload.uid + "/avatar")
-            .once("value")
-            .then(snapshot => snapshot.val());
-        yield put(createMyCvSuccess({
-            ...payload,
-            avatar: avatarRes
-        }));
     }
+
+    if (typeof (payload.avatar) === "string") {
+        yield database.ref(`users/${payload.uid}`)
+            .update({
+                ...payload,
+                avatar: payload.avatar
+            });
+        yield put(createMyCvSuccess(payload));
+        return;
+    }
+
+    let uploadTask = storage.ref("images/")
+        .child(payload.uid)
+        .put(payload.avatar);
+    yield uploadTask.on('state_changed',
+        (snapshot) => { },
+        (error) => { if (error) { console.log(error.code) } },
+        () => {
+            uploadTask.snapshot
+                .ref
+                .getDownloadURL()
+                .then(url => {
+                    database.ref(`users/${payload.uid}`)
+                        .update({
+                            ...payload,
+                            avatar: url
+                        });
+                })
+        }
+    );
+    let avatarRes = yield database.ref("users/" + payload.uid + "/avatar")
+        .once("value")
+        .then(snapshot => snapshot.val());
+    yield put(createMyCvSuccess({
+        ...payload,
+        avatar: avatarRes
+    }));
 }
 
 export function* createMyCvAction() {
