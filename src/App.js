@@ -4,7 +4,8 @@ import ProfileForm from './features/FormBuilding/ProfileForm';
 import {
   BrowserRouter as Router,
   Route,
-  Switch
+  Switch,
+  Link
 } from "react-router-dom";
 import { MyCVPrint } from './features/MyCV/MyCVPrint';
 import Login from './auth/Login';
@@ -34,6 +35,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+      <Link to="/login">login</Link>
         <Switch>
           <Route exact path="/form-building">
             {
