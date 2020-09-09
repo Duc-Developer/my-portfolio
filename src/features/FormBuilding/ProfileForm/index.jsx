@@ -71,7 +71,7 @@ export default function ProfileForm(props) {
   const [imgUrl, setImg] = useState(
     !defaultValues.avatar ? defaultAvatar : defaultValues.avatar
   );
-  const [mobiStatus, setStatus] = useState(null); //experience, special
+  const [mobiStatus, setStatus] = useState(null); //experience, special, project, knowledges
   const [userCurrent, setUserCurrent] = useState(null);
   const dispatch = useDispatch();
   const history = useHistory();
@@ -222,6 +222,24 @@ export default function ProfileForm(props) {
                     <span>Special</span>
                   </Button>
                 </ButtonGroup>
+                <ButtonGroup>
+                  <Button
+                    color="warning"
+                    onClick={() => {
+                      setStatus("project");
+                    }}
+                  >
+                    Project
+                  </Button>
+                  <Button
+                    color="danger"
+                    onClick={() => {
+                      setStatus("knowledges");
+                    }}
+                  >
+                    Knowledges
+                  </Button>
+                </ButtonGroup>
               </div>
               {mobiStatus === "education" && (
                 <div className="on-mobile-screen">
@@ -256,10 +274,24 @@ export default function ProfileForm(props) {
           </Row>
           <Row>
             <Col xs="12" lg="8">
-              <ProjectForm control={control} setValue={setValue} />
+              <div className="on-default-screen">
+                <ProjectForm control={control} setValue={setValue} />
+              </div>
+              {mobiStatus === "project" && (
+                <div className="on-mobile-screen">
+                  <ProjectForm control={control} setValue={setValue} />
+                </div>
+              )}
             </Col>
             <Col xs="12" lg="4">
-              <KnowledgesForm control={control} setValue={setValue} />
+              <div className="on-default-screen">
+                <KnowledgesForm control={control} setValue={setValue} />
+              </div>
+              {mobiStatus === "knowledges" && (
+                <div className="on-mobile-screen">
+                  <KnowledgesForm control={control} setValue={setValue} />
+                </div>
+              )}
             </Col>
           </Row>
 
