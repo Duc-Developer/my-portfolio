@@ -51,8 +51,10 @@ export default function ProjectForm(props) {
           };
 
           function handleAddProject() {
-            const { name, website, github } = value[value.length - 1];
-            if (!name || !website || !github) {
+            const { name, website, github, information } = value[
+              value.length - 1
+            ];
+            if (!name || !website || !github || !information) {
               setErrorMessage("Không thể thêm tab mới nếu tab trước trống.");
               return;
             } else {
@@ -155,6 +157,21 @@ export default function ProjectForm(props) {
                     name="website"
                     value={projectCurrent.website}
                     placeholder="Your Web link"
+                    onChange={(e) => {
+                      handleChange(e);
+                    }}
+                  />
+                </Col>
+                <Col xs="12">
+                  <Label>
+                    <b>Information:</b>
+                  </Label>
+                  <Input
+                    type="textarea"
+                    style={{ height: "10em" }}
+                    name="information"
+                    value={projectCurrent.information}
+                    placeholder="What do you do with project"
                     onChange={(e) => {
                       handleChange(e);
                     }}
