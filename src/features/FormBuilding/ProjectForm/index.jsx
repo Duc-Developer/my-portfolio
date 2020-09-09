@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Row, Col, Input, Label, Button, ButtonGroup, Alert } from "reactstrap";
 import { Controller } from "react-hook-form";
 import * as ids from "short-id";
@@ -45,11 +45,11 @@ export default function ProjectForm(props) {
           };
 
           const handleIncrease = () => {
-            if (count < value.length - 2) {
+            if (count <= value.length - 2) {
               setCount(count + 1);
             }
           };
-          console.log(count, value);
+
           function handleAddProject() {
             const { name, website, github } = value[value.length - 1];
             if (!name || !website || !github) {
@@ -65,6 +65,7 @@ export default function ProjectForm(props) {
               website: "",
             };
             setValue("project", [...value, newProjectItem]);
+            handleIncrease();
           }
           return (
             <div>
@@ -85,8 +86,9 @@ export default function ProjectForm(props) {
                       return (
                         <Button
                           color={
-                            (indexCurrent === index + count - 1)
-                            ? "primary" : "secondary"
+                            indexCurrent === index + count - 1
+                              ? "primary"
+                              : "secondary"
                           }
                           onClick={() => {
                             setProjectCurrent(item);
