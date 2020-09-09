@@ -1,26 +1,38 @@
 import React from 'react';
-import { Row, Col, Button, Input, Label, Container, Badge } from 'reactstrap';
-import './ExperienceForm.css'
+import { Row, Input, Button, Container, Col, Label, Badge } from 'reactstrap';
 import { Controller } from 'react-hook-form';
 import { useState } from 'react';
 import * as ids from 'short-id';
+import './SpecialForm.css';
 
-export default function ExperienceForm(props) {
-
+export default function SpecialForm(props) {
     const { control, setValue } = props;
-    const { experience } = control.defaultValuesRef.current;
+    const { special } = control.defaultValuesRef.current;
     const [errorRow, setError] = useState(null);
 
-    return <div className="experience-form">
+    return <div className="special-form" >
         <Container>
             <Label>
-                <b>Kinh nghiệm:</b>
+                <b>Kỹ năng:</b>
             </Label>
             <Controller
-                name="experience"
+                name="special"
                 control={control}
-                defaultValue={experience}
-                render={({ onChange, value }) => { //do something data with id
+                defaultValue={special}
+                render={({ onChange, value }) => {
+                    function handleAddRow() {
+                        const { name } = value[value.length - 1];
+                        if (!name.length) {
+                            setError("Không thể thêm hàng nếu ô trống.");
+                            return;
+                        } else {
+                            setError(null);
+                        }
+                        setValue("special",[
+                            ...value,
+                            { name: "", range: 0, id: ids.generate() }
+                        ]);
+                    }
                     function handleOnChange(e, index) {
                         onChange([
                             ...value.slice(0, index),
@@ -29,51 +41,32 @@ export default function ExperienceForm(props) {
                                 [e.target.name]: e.target.value
                             },
                             ...value.slice(index + 1)
-                        ])
-                    }
-                    function handleAddRow() {
-                        const { time, company, achievements } = value[value.length - 1];
-                        if (!time.length || !company.length || !achievements.length) {
-                            setError("Không thể thêm hàng nếu ô trống!");
-                            return;
-                        } else {
-                            setError(null);
-                        }
-                        setValue("experience", [
-                            ...value,
-                            { time: "", company: "", achievements: "", id: ids.generate() }
                         ]);
                     }
-                    
                     return <div>
                         {
                             value.map((item, index) => {
-                                return <div className="input-experience-group" key={item.id}>
+                                return <div className="input-special-group" key={item.id}>
                                     <Row>
-                                        <Col xs="12" sm="4" lg="2">
-                                            <Label><b>Time:</b></Label>
+                                        <Col xs="12" md="3" >
                                             <Input
-                                                type="month"
-                                                name="time"
-                                                defaultValue={item.time}
+                                                type="text"
+                                                name="name"
+                                                placeholder="Kỹ năng của bạn..."
+                                                defaultValue={item.name}
                                                 onChange={(e) => { handleOnChange(e, index) }}
                                             />
                                         </Col>
-                                        <Col xs="12" sm="8" lg="4">
-                                            <Label><b>Công ty:</b></Label>
-                                            <Input
-                                                type="text"
-                                                name="company"
-                                                defaultValue={item.company}
-                                                onChange={(e) => { handleOnChange(e, index) }}
-                                            />
+                                        <Col xs="3" md="1">
+                                            <i>{`${item.range}%`}</i>
                                         </Col>
-                                        <Col sm="12" lg="6">
-                                            <Label><b>Thành tích:</b></Label>
+                                        <Col xs="9" md="8" className="input-range-column" >
                                             <Input
-                                                type="text"
-                                                name="achievements"
-                                                defaultValue={item.achievements}
+                                                type="range"
+                                                name="range"
+                                                defaultValue={item.range}
+                                                min="0" 
+                                                max="100"
                                                 onChange={(e) => { handleOnChange(e, index) }}
                                             />
                                         </Col>

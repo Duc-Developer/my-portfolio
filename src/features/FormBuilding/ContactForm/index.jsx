@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'reactstrap';
-import TextFieldController from '../../components/Fields/TextFieldController';
-import RadioController from '../../components/Fields/RadioController';
+import TextFieldController from '../../../components/Fields/TextFieldController';
+import RadioController from '../../../components/Fields/RadioController';
 import './ContactForm.css';
 
 export default function ContactForm(props) {
@@ -64,11 +64,27 @@ export default function ContactForm(props) {
             </Col>
         </Row>
         <Row>
-            <Col xs="12">
+        <Col xs="12" lg="4">
+                <TextFieldController
+                    name="fullName"
+                    lableName="Tên:"
+                    type="text"
+                    id="inputFullName"
+                    placeholder="Tên đầy đủ...."
+                    rules={{
+                        required: {
+                            value: true,
+                            message: "Cần tên chứ!"
+                        }
+                    }}
+                    errors={errors}
+                    control={control} />
+            </Col>
+            <Col xs="12" lg="8" >
                 <TextFieldController
                     name="address"
                     lableName="Địa chỉ:"
-                    type="tel"
+                    type="text"
                     id="inputAddress"
                     placeholder="Address Here...."
                     rules={{}}

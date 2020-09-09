@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'reactstrap';
-import TextFieldController from '../../components/Fields/TextFieldController';
-import SelectMultiController from '../../components/Fields/SelectMultiController';
+import TextFieldController from '../../../components/Fields/TextFieldController';
+import SelectMultiController from '../../../components/Fields/SelectMultiController';
 import './EducationForm.css';
 
 export default function EducationForm(props) {

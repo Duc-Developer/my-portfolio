@@ -1,0 +1,235 @@
+.my-cv {
+  background-color: white;
+  font-size: 18px;
+}
+
+.my-cv-side-page-left {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  position: relative !important;
+  background: #1e1c25;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.my-cv-side-page-right {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  position: relative !important;
+  background-color: #cccccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#my-cv-wrap-avata-name-box {
+  position: relative;
+}
+
+.my-cv-wrap-name-box {
+  background-color: tomato;
+  position: absolute;
+  bottom: -1em;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.my-cv-wrap-name-box b {
+  color: wheat;
+  font-size: 1.5rem;
+}
+
+.my-cv-contact-box {
+  background-color: white;
+  margin-top: 5rem;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.my-cv-title-box {
+  background-color: rgb(142, 206, 210);
+  text-align: center;
+}
+
+.my-cv-title-box span {
+  font-size: 2em;
+}
+
+.my-cv-title-box Row {
+  margin-bottom: 1rem;
+}
+
+.my-cv-progress-special {
+  margin-top: 2rem;
+  width: 100%;
+  /* max-width: calc(25vw); */
+}
+
+.my-cv-about-box {
+  width: 100%;
+}
+
+.my-cv-about-box-content {
+  margin: 2em 0 2em 0;
+  background-color: white;
+  border-radius: 20px;
+  padding: 1em;
+  text-align: justify;
+  /* text-indent: 5%; */
+}
+
+.my-cv-education-box {
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+.my-cv-education-box-content {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: space-between;
+}
+
+.my-cv-education-box-content div {
+  display: flex;
+}
+
+.my-cv-experience-box {
+  width: 100%;
+}
+
+.my-cv-experience-box > i {
+  margin-bottom: 0.5em;
+}
+
+@media only screen and (max-width: 789px) {
+  .my-cv {
+    background-color: white;
+    font-size: 18px;
+  }
+
+  .my-cv-side-page-left {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    position: relative !important;
+    background: #1e1c25;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .my-cv-side-page-right {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    position: relative !important;
+    background-color: #cccccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #my-cv-wrap-avata-name-box {
+    position: relative;
+  }
+
+  .my-cv-wrap-name-box {
+    background-color: tomato;
+    position: absolute;
+    bottom: -1em;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    border-radius: 20px;
+  }
+
+  .my-cv-wrap-name-box b {
+    color: wheat;
+    font-size: 1.5rem;
+  }
+
+  .my-cv-contact-box {
+    background-color: white;
+    margin-top: 5rem;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .my-cv-title-box {
+    background-color: rgb(142, 206, 210);
+    text-align: center;
+  }
+
+  .my-cv-title-box span {
+    font-size: 1em;
+  }
+
+  .my-cv-title-box Row {
+    margin-bottom: 1rem;
+  }
+
+  .my-cv-progress-special {
+    margin-top: 2rem;
+    width: 100%;
+    /* max-width: calc(25vw); */
+  }
+
+  .my-cv-about-box {
+    width: 100%;
+  }
+
+  .my-cv-about-box-content {
+    margin: 2em 0 2em 0;
+    height: 400px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 1em;
+    text-align: justify;
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .my-cv-about-box-content::-webkit-scrollbar {
+    display: none;
+  }
+  .my-cv-education-box {
+    width: 100%;
+    margin-bottom: 2em;
+  }
+
+  .my-cv-education-box-content {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .my-cv-education-box-content div {
+    display: flex;
+  }
+
+  .my-cv-education-box-content div h2 {
+    font-size:1em
+  }
+
+  .my-cv-education-box-content div .my-cv-icon-mobile {
+    font-size:1em
+  }
+
+  .my-cv-experience-box {
+    width: 100%;
+  }
+
+  .my-cv-experience-box > i {
+    margin-bottom: 0.5em;
+  }
+
+  .my-cv-icon-mobile {
+    font-size: 1.5em
+  }
+}

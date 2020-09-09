@@ -1,0 +1,5 @@
+export const myCvConstants = {
+    CREATE_MY_CV: "CREATE_MY_CV",
+    CREATE_MY_CV_SUCCESS: "CREATE_MY_CV_SUCCESS",
+    CREATE_MY_CV_FAIL: "CREATE_MY_CV_FAIL"
+}
