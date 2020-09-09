@@ -28,6 +28,7 @@ import { createMyCv } from "../../../actions";
 import { useHistory, NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import * as firebase from "firebase";
+import ProjectForm from "../ProjectForm";
 
 // const defaultValues = {
 //   uid: null,
@@ -72,12 +73,13 @@ export default function ProfileForm(props) {
   let imgUpload = useRef(false);
 
   const onSubmit = (data) => {
-    dispatch(
-      createMyCv({
-        ...data,
-        uid: userCurrent.uid,
-      })
-    );
+    // dispatch(
+    //   createMyCv({
+    //     ...data,
+    //     uid: userCurrent.uid,
+    //   })
+    // );
+    console.log(data);
   };
 
   const handleClickImg = () => {
@@ -183,7 +185,7 @@ export default function ProfileForm(props) {
             </Col>
             <Col xs="12" lg="6">
               <div className="on-default-screen">
-                <EducationForm control={control} errors={errors} />
+                <EducationForm control={control} setValue={setValue} />
               </div>
               <div className="on-mobile-screen group-button-control-mobi">
                 <ButtonGroup>
@@ -245,6 +247,14 @@ export default function ProfileForm(props) {
                   <SpecialForm setValue={setValue} control={control} />
                 </div>
               )}
+            </Col>
+          </Row>
+          <Row>
+            <Col xs="12" lg="8">
+              <ProjectForm control={control} setValue={setValue}/>
+            </Col>
+            <Col xs="12" lg="4">
+              yout knowledges here
             </Col>
           </Row>
 
