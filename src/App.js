@@ -14,7 +14,6 @@ import { database } from './firebase'
 import { useState } from 'react';
 import Loading from './components/Loading';
 
-
 function App() {
   const [profile, setProfile] = useState(null);
 
