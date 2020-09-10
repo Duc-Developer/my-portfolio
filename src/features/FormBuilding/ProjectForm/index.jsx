@@ -65,9 +65,12 @@ export default function ProjectForm(props) {
               name: "",
               github: "",
               website: "",
+              information: "",
             };
             setValue("project", [...value, newProjectItem]);
             handleIncrease();
+            setIndexCurrent(value.length)
+            setProjectCurrent(newProjectItem);
           }
           return (
             <div>

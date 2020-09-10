@@ -78,13 +78,12 @@ export default function ProfileForm(props) {
   let imgUpload = useRef(false);
 
   const onSubmit = (data) => {
-    // dispatch(
-    //   createMyCv({
-    //     ...data,
-    //     uid: userCurrent.uid,
-    //   })
-    // );
-    console.log(data);
+    dispatch(
+      createMyCv({
+        ...data,
+        uid: userCurrent.uid,
+      })
+    );
   };
 
   const handleClickImg = () => {
