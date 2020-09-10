@@ -32,35 +32,33 @@ import ProjectForm from "../ProjectForm";
 import KnowledgesForm from "../KnowLedgesForm";
 
 // const userSchema = {
-//   uid: null,
-//   email: "",
-//   fullName: "",
-//   phone: "",
-//   address: "",
-//   avatar: null,
-//   birthday: "",
-//   gender: "nam",
-//   rating: "",
-//   about: "",
-//   school: "",
-//   specialize: "",
-//   timeStart: "",
-//   timeEnd: "",
-//   moreInformation: "",
-//   experience: [
-//     {
-//       time: "",
-//       company: "",
-//       achievements: "",
-//       position: "",
-//       id: ids.generate(),
-//     },
-//   ],
-//   special: [{ name: "", range: 0, id: ids.generate() }],
-//   knowledges: ["google ads", "photoshop"],
-//   project: [
-//     { name: "", github: "", website: "", id: ids.generate(), information: "" },
-//   ],
+//   "uid": null,
+//   "email": "",
+//   "fullName": "",
+//   "phone": "",
+//   "address": "",
+//   "avatar": "",
+//   "birthday": "",
+//   "gender": "nam",
+//   "rating": "",
+//   "about": "",
+//   "school": "",
+//   "specialize": "",
+//   "timeStart": "",
+//   "timeEnd": "",
+//   "moreInformation": "",
+//   "experience": [{
+//       "time": "",
+//       "company": "",
+//       "achievements": "",
+//       "position": "",
+//       "id": "root-id-001",
+//     }],
+//   "special": [{ "name": "", "range": 0, "id": "root-id-001" }],
+//   "knowledges": ["google ads", "photoshop"],
+//   "project": [
+//     { "name": "", "github": "", "website": "", "id": "root-id-001", "information": "" }
+//   ]
 // };
 
 export default function ProfileForm(props) {
