@@ -8,7 +8,7 @@ const ui = new firebaseui.auth.AuthUI(firebase.auth());
 
 ui.start("#firebaseui-auth-container", {
   signInFlow: "popup",
-  signInSuccessUrl: "http://localhost:3000/form-building",
+  signInSuccessUrl: "/form-building",
   callbacks: {
     uiShown: function () {
       document.getElementById("loader").style.display = "none";
