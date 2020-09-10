@@ -1,0 +1,58 @@
+.portfolio-component {
+  background: #2193b0;
+  background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);
+  background: linear-gradient(to right, #6dd5ed, #2193b0);
+  height: calc(100vh);
+  width: calc(100vw);
+  padding-top: calc(10vh);
+}
+
+.portfolio-main-container {
+  display: flex;
+}
+
+.portfolio-main-dashboard {
+  height: calc(80vh);
+  border-radius: 30px;
+  overflow: hidden;
+  background-color: #7c7c7c;
+  flex-grow: 1;
+}
+
+.portfolio-wrap-dashboard {
+  height: 100%;
+}
+
+.portfolio-dashboard-left {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio-dashboard-right {
+  background: #000000;
+  background: -webkit-linear-gradient(to right, #434343, #000000);
+  background: linear-gradient(to right, #434343, #000000);
+  height: 100%;
+  border-radius: 30px;
+}
+
+.portfolio-main-control {
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  height: calc(80vh);
+}
+
+.portfolio-main-control-nav-top {
+  flex-grow: 1;
+}
+
+.portfolio-main-control-nav-bottom {
+}
+
+@media only screen and (max-width: 1023px) {
+  
+}
