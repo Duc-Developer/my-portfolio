@@ -149,15 +149,17 @@ export default class MyCV extends Component {
                           >
                             <Container>
                               <Row>
-                                <Col xs="8">
-                                  <b>{item.name}</b>
+                                <Col xs="8" md="12" lg="8">
+                                  <div>
+                                    <b>{item.name}</b>
+                                  </div>
                                 </Col>
-                                <Col xs="2">
+                                <Col xs="2" md="6" lg="2">
                                   <a target="_blank" href={item.website}>
                                     View
                                   </a>
                                 </Col>
-                                <Col xs="2">
+                                <Col xs="2" md="6" lg="2">
                                   <a target="_blank" href={item.github}>
                                     Code
                                   </a>
@@ -169,7 +171,21 @@ export default class MyCV extends Component {
                       })}
                   </div>
                 </Col>
-                <Col xs="12">Your knowledges here</Col>
+                <Col xs="12">
+                  <div className="my-cv-knowledges-container">
+                    <div className="my-cv-knowledges-title-container">
+                      <h3>Knowledges</h3>
+                    </div>
+                    {data.knowledges &&
+                      data.knowledges.map((item, index) => {
+                        return (
+                          <div key={index} className="my-cv-knowledges-item">
+                            {item}
+                          </div>
+                        );
+                      })}
+                  </div>
+                </Col>
               </Row>
             </Col>
             <Col xs="12" md="8" className="my-cv-side-page-right">

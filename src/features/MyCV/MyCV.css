@@ -84,6 +84,26 @@
   padding: 0.5rem;
 }
 
+.my-cv-knowledges-container {
+  margin-top: 2em;
+}
+
+.my-cv-knowledges-title-container {
+  text-align: center;
+}
+
+.my-cv-knowledges-title-container h3 {
+  color: white;
+}
+
+.my-cv-knowledges-item {
+  float: left;
+  padding: 2px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 0 5px 0 5px;
+}
+
 .my-cv-about-box {
   width: 100%;
 }
@@ -230,11 +250,11 @@
   }
 
   .my-cv-education-box-content div h2 {
-    font-size:1em
+    font-size: 1em;
   }
 
   .my-cv-education-box-content div .my-cv-icon-mobile {
-    font-size:1em
+    font-size: 1em;
   }
 
   .my-cv-experience-box {
@@ -246,6 +266,6 @@
   }
 
   .my-cv-icon-mobile {
-    font-size: 1.5em
+    font-size: 1.5em;
   }
 }
