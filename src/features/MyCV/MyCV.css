@@ -68,6 +68,22 @@
   /* max-width: calc(25vw); */
 }
 
+.my-cv-project-list-box {
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 2em;
+}
+
+.my-cv-project-box-title {
+  background-color: rgb(142, 206, 210);
+  text-align: center;
+}
+
+.my-cv-project-list-item {
+  padding: 0.5rem;
+}
+
 .my-cv-about-box {
   width: 100%;
 }
