@@ -5,7 +5,6 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Link
 } from "react-router-dom";
 import { MyCVPrint } from './features/MyCV/MyCVPrint';
 import Login from './auth/Login';
@@ -17,6 +16,7 @@ import Portfolio from './features/Portfolio';
 
 function App() {
   const [profile, setProfile] = useState(null);
+  const [dataView, setDataView] = useState(null);
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged(function (user) {
@@ -30,6 +30,13 @@ function App() {
           })
       }
     });
+    database.ref("users/" + "OpoIipVtDJXWCe3TdtzKJDlClr62")
+          .once("value")
+          .then(snap => {
+            if (snap.val()) {
+              setDataView(snap.val());
+            }
+          })
   }, []);
 
   return (
@@ -38,12 +45,12 @@ function App() {
         <Switch>
           <Route exact path="/">
             {
-              !profile ? <Loading
+              !dataView ? <Loading
                 height="calc(100vh)"
                 widthIcon={10}
                 heightIcon={10}
                 color="primary" />
-                : <Portfolio defaultValues={profile} />
+                : <Portfolio defaultValues={dataView} />
             }
           </Route>
           <Route exact path="/form-building">
