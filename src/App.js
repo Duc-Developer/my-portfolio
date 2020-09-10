@@ -50,7 +50,7 @@ function App() {
                 widthIcon={10}
                 heightIcon={10}
                 color="primary" />
-                : <Portfolio defaultValues={dataView} />
+                : <Portfolio defaultValues={!profile ? dataView : profile} />
             }
           </Route>
           <Route exact path="/form-building">
