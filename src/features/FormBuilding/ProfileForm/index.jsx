@@ -29,33 +29,36 @@ import { useHistory, NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import * as firebase from "firebase";
 import ProjectForm from "../ProjectForm";
+import KnowledgesForm from "../KnowLedgesForm";
 
-// const defaultValues = {
-//   uid: null,
-//   email: "",
-//   fullName: "",
-//   phone: "",
-//   address: "",
-//   avatar: null,
-//   birthday: "",
-//   gender: "nam",
-//   rating: "",
-//   about: "",
-//   school: "",
-//   specialize: "",
-//   timeStart: "",
-//   timeEnd: "",
-//   moreInformation: "",
-//   experience: [
-//     {
-//       time: "",
-//       company: "",
-//       achievements: "",
-//       position: "",
-//       id: ids.generate(),
-//     },
-//   ],
-//   special: [{ name: "", range: 0, id: ids.generate() }],
+// const userSchema = {
+//   "uid": null,
+//   "email": "",
+//   "fullName": "",
+//   "phone": "",
+//   "address": "",
+//   "avatar": "",
+//   "birthday": "",
+//   "gender": "nam",
+//   "rating": "",
+//   "about": "",
+//   "school": "",
+//   "specialize": "",
+//   "timeStart": "",
+//   "timeEnd": "",
+//   "moreInformation": "",
+//   "experience": [{
+//       "time": "",
+//       "company": "",
+//       "achievements": "",
+//       "position": "",
+//       "id": "root-id-001",
+//     }],
+//   "special": [{ "name": "", "range": 0, "id": "root-id-001" }],
+//   "knowledges": ["google ads", "photoshop"],
+//   "project": [
+//     { "name": "", "github": "", "website": "", "id": "root-id-001", "information": "" }
+//   ]
 // };
 
 export default function ProfileForm(props) {
@@ -66,7 +69,7 @@ export default function ProfileForm(props) {
   const [imgUrl, setImg] = useState(
     !defaultValues.avatar ? defaultAvatar : defaultValues.avatar
   );
-  const [mobiStatus, setStatus] = useState(null); //experience, special
+  const [mobiStatus, setStatus] = useState(null); //experience, special, project, knowledges
   const [userCurrent, setUserCurrent] = useState(null);
   const dispatch = useDispatch();
   const history = useHistory();
@@ -216,6 +219,24 @@ export default function ProfileForm(props) {
                     <span>Special</span>
                   </Button>
                 </ButtonGroup>
+                <ButtonGroup>
+                  <Button
+                    color="warning"
+                    onClick={() => {
+                      setStatus("project");
+                    }}
+                  >
+                    Project
+                  </Button>
+                  <Button
+                    color="danger"
+                    onClick={() => {
+                      setStatus("knowledges");
+                    }}
+                  >
+                    Knowledges
+                  </Button>
+                </ButtonGroup>
               </div>
               {mobiStatus === "education" && (
                 <div className="on-mobile-screen">
@@ -250,10 +271,24 @@ export default function ProfileForm(props) {
           </Row>
           <Row>
             <Col xs="12" lg="8">
-              <ProjectForm control={control} setValue={setValue}/>
+              <div className="on-default-screen">
+                <ProjectForm control={control} setValue={setValue} />
+              </div>
+              {mobiStatus === "project" && (
+                <div className="on-mobile-screen">
+                  <ProjectForm control={control} setValue={setValue} />
+                </div>
+              )}
             </Col>
             <Col xs="12" lg="4">
-              yout knowledges here
+              <div className="on-default-screen">
+                <KnowledgesForm control={control} setValue={setValue} />
+              </div>
+              {mobiStatus === "knowledges" && (
+                <div className="on-mobile-screen">
+                  <KnowledgesForm control={control} setValue={setValue} />
+                </div>
+              )}
             </Col>
           </Row>
 

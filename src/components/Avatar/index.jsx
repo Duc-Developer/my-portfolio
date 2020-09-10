@@ -36,6 +36,6 @@ export default function Avatar(props) {
         border: border
     }}
     >
-        <img width={`${size*1.2}px`} src={src} alt={alt}/>
+        <img height={`${size*1.2}px`} width={`${size*1.2}px`} src={src} alt={alt}/>
     </div>
 }

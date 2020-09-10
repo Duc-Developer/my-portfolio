@@ -41,6 +41,19 @@ export default function Login() {
     <div className="login-page">
       <div id="firebaseui-auth-container">
         <h1>LOGIN IS ONLY FOR DEVELOPER</h1>
+        <div>
+        <i>Bạn có thể sử dụng tài khoản thử nghiệm để test:</i>
+        </div>
+        <div>
+          <ul>
+            <li>Phone: +84965971469</li>
+            <li>Verification: 233199</li>
+          </ul>
+        </div>
+        <div>
+          <b>Note: </b>
+          <i>Mọi tài khoản đăng ký thành công nhưng Đức không duyệt sẽ ko thể  truy cập vào form khởi tạo</i>
+        </div>
       </div>
       <div id="loader">
         <p>loading..</p>

@@ -1,0 +1,54 @@
+.know-ledges {
+  background-color: white;
+  padding: 20px 10px 20px 10px;
+  border-radius: 20px;
+  margin: 10px 0 0px 0;
+}
+
+.knowledges-wrap-input {
+  display: flex;
+  border: 1px solid #aaaaaa;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.knowledges-wrap-input Input {
+  border: none;
+  text-decoration: none;
+}
+
+.knowledges-list-item-box {
+  height: 16em;
+  border: 1px solid #aaaaaa;
+  border-radius: 10px;
+  overflow-y: scroll;
+  margin-top: 1em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.knowledges-list-item-box::-webkit-scrollbar {
+  display: none;
+}
+
+.knowledges-item {
+    background-color: #483D8B;
+    padding: 0 5px 0 5px;
+    margin: 5px;
+    border-radius: 10px;
+    float: left;
+    position: relative;
+}
+
+.knowledges-item i {
+    color:white
+}
+
+.knowledges-close-icon-button {
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    border: none;
+}

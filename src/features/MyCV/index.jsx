@@ -64,7 +64,9 @@ export default class MyCV extends Component {
                         />
                       </Col>
                       <Col style={{ textAlign: "center" }} xs="12" xl="9">
-                        <div><p>{data.email}</p></div>
+                        <div>
+                          <p>{data.email}</p>
+                        </div>
                       </Col>
                     </Row>
                   </Col>
@@ -77,7 +79,9 @@ export default class MyCV extends Component {
                         />
                       </Col>
                       <Col style={{ textAlign: "center" }} xs="12" xl="9">
-                        <div><p>{data.phone}</p></div>
+                        <div>
+                          <p>{data.phone}</p>
+                        </div>
                       </Col>
                     </Row>
                   </Col>
@@ -90,7 +94,9 @@ export default class MyCV extends Component {
                         />
                       </Col>
                       <Col style={{ textAlign: "center" }} xs="12" xl="9">
-                        <div><p>{data.address}</p></div>
+                        <div>
+                          <p>{data.address}</p>
+                        </div>
                       </Col>
                     </Row>
                   </Col>
@@ -103,24 +109,84 @@ export default class MyCV extends Component {
                         />
                       </Col>
                       <Col style={{ textAlign: "center" }} xs="12" xl="9">
-                        <div><p>{data.gender}</p></div>
+                        <div>
+                          <p>{data.gender}</p>
+                        </div>
                       </Col>
                     </Row>
                   </Col>
                 </Row>
               </div>
               <div className="my-cv-progress-special">
-                {data.special.map((item) => {
-                  return (
-                    <ProgressSkill
-                      key={item.id}
-                      range={JSON.parse(item.range)}
-                      skill={item.name}
-                      labelColor="white"
-                    />
-                  );
-                })}
+                {data.special &&
+                  data.special.map((item) => {
+                    return (
+                      <ProgressSkill
+                        key={item.id}
+                        range={JSON.parse(item.range)}
+                        skill={item.name}
+                        labelColor="white"
+                      />
+                    );
+                  })}
               </div>
+              <Row>
+                <Col xs="12">
+                  <div className="my-cv-project-list-box">
+                    <Row>
+                      <Col xs="12">
+                        <div className="my-cv-project-box-title">
+                          <h3>My Project</h3>
+                        </div>
+                      </Col>
+                    </Row>
+                    {data.project &&
+                      data.project.map((item, index) => {
+                        return (
+                          <div
+                            key={item.id}
+                            className="my-cv-project-list-item"
+                          >
+                            <Container>
+                              <Row>
+                                <Col xs="8" md="12" lg="8">
+                                  <div>
+                                    <b>{item.name}</b>
+                                  </div>
+                                </Col>
+                                <Col xs="2" md="6" lg="2">
+                                  <a target="_blank" href={item.website}>
+                                    View
+                                  </a>
+                                </Col>
+                                <Col xs="2" md="6" lg="2">
+                                  <a target="_blank" href={item.github}>
+                                    Code
+                                  </a>
+                                </Col>
+                              </Row>
+                            </Container>
+                          </div>
+                        );
+                      })}
+                  </div>
+                </Col>
+                <Col xs="12">
+                  <div className="my-cv-knowledges-container">
+                    <div className="my-cv-knowledges-title-container">
+                      <h3>Knowledges</h3>
+                    </div>
+                    {data.knowledges &&
+                      data.knowledges.map((item, index) => {
+                        return (
+                          <div key={index} className="my-cv-knowledges-item">
+                            {item}
+                          </div>
+                        );
+                      })}
+                  </div>
+                </Col>
+              </Row>
             </Col>
             <Col xs="12" md="8" className="my-cv-side-page-right">
               <div className="my-cv-about-box">
@@ -131,7 +197,7 @@ export default class MyCV extends Component {
                   {" Giới thiệu bản thân"}
                 </i>
                 <div className="my-cv-about-box-content">
-                  <span style={{ whiteSpace: "pre-line"}}>{data.about}</span>
+                  <span style={{ whiteSpace: "pre-line" }}>{data.about}</span>
                 </div>
               </div>
               <div className="my-cv-education-box">
@@ -187,20 +253,21 @@ export default class MyCV extends Component {
                 >
                   {" KINH NGHIỆM"}
                 </i>
-                {data.experience.map((item) => {
-                  return (
-                    <TextCard
-                      key={item.id}
-                      fontSize={1}
-                      iconColor="tomato"
-                      textHeader={item.time}
-                      title={`Công ty: ${item.company}`}
-                      subline={`Vị trí: ${item.position}`}
-                    >
-                      {item.achievements}
-                    </TextCard>
-                  );
-                })}
+                {data.experience &&
+                  data.experience.map((item) => {
+                    return (
+                      <TextCard
+                        key={item.id}
+                        fontSize={1}
+                        iconColor="tomato"
+                        textHeader={item.time}
+                        title={`Công ty: ${item.company}`}
+                        subline={`Vị trí: ${item.position}`}
+                      >
+                        {item.achievements}
+                      </TextCard>
+                    );
+                  })}
               </div>
             </Col>
           </Row>
