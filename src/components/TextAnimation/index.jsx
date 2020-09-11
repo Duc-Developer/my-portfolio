@@ -13,13 +13,14 @@ export default function TextAnimation(props) {
   const [textAnimation, setAnimation] = useState(textList[indexCurrent]);
 
   useEffect(() => {
-    setTimeout(() => {
+    let myTimeOut = setTimeout(() => {
       setAnimation(textAnimation.slice(0, textAnimation.length - 1));
     }, 500);
     if (textAnimation === textList[indexCurrent].slice(0, 3)) {
       if (indexCurrent < textList.length - 1) {
         setIndexCurrent(indexCurrent + 1);
         setAnimation(textList[indexCurrent + 1]);
+        clearTimeout(myTimeOut);
       } else {
         setIndexCurrent(0);
         setAnimation(textList[0]);
