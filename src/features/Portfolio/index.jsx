@@ -2,9 +2,15 @@ import React, { useState } from "react";
 import "./Portfolio.css";
 import SideBarAnimation from "./SideBarAnimation";
 import AboutPage from "./AboutPage";
-import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from "react-router-dom";
 import ExperiencePage from "./ExperiencePage";
 import SpecialPage from "./SpecialPage";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Portfolio(props) {
   const { defaultValues } = props;
@@ -71,28 +77,28 @@ export default function Portfolio(props) {
             }`}
           >
             <div className="portfolio__right-board--scroll portfolio__main-mobi--scroll">
-              {
-                path && <Redirect to={`/${path}`} />
-              }
-              <Switch>
-                <Route exact path="/portfolio-about">
-                  <AboutPage
-                    about={defaultValues.about}
-                    email={defaultValues.email}
-                    address={defaultValues.address}
-                    phone={defaultValues.phone}
-                    gender={defaultValues.gender}
-                    fullName={defaultValues.fullName}
-                    birthday={defaultValues.birthday}
-                  />
-                </Route>
-                <Route exact path="/portfolio-special">
-                  <SpecialPage />
-                </Route>
-                <Route exact path="/portfolio-experience">
-                  <ExperiencePage />
-                </Route>
-              </Switch>
+              {path && <Redirect to={`/${path}`} />}
+              <AnimatePresence>
+                <Switch>
+                  <Route exact path="/portfolio-about">
+                    <AboutPage
+                      about={defaultValues.about}
+                      email={defaultValues.email}
+                      address={defaultValues.address}
+                      phone={defaultValues.phone}
+                      gender={defaultValues.gender}
+                      fullName={defaultValues.fullName}
+                      birthday={defaultValues.birthday}
+                    />
+                  </Route>
+                  <Route exact path="/portfolio-special">
+                    <SpecialPage />
+                  </Route>
+                  <Route exact path="/portfolio-experience">
+                    <ExperiencePage />
+                  </Route>
+                </Switch>
+              </AnimatePresence>
             </div>
           </div>
         </div>
@@ -100,14 +106,16 @@ export default function Portfolio(props) {
         <div className="portfolio__main-control portfolio__control-mobi">
           <div className="portfolio__main-control-top">navTop</div>
           <div className="portfolio__main-control-bottom">
-          <i 
-          type="button"
-          onClick={handleGoNext}
-          className="fas fa-forward fa-2x" />
-          <i 
-          type="button"
-          onClick={handleGoBack}
-          className="fas fa-backward fa-2x" />
+            <i
+              type="button"
+              onClick={handleGoNext}
+              className="fas fa-forward fa-2x"
+            />
+            <i
+              type="button"
+              onClick={handleGoBack}
+              className="fas fa-backward fa-2x"
+            />
           </div>
         </div>
       </Router>
