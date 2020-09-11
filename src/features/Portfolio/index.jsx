@@ -5,7 +5,6 @@ import SideBarAnimation from "./SideBarAnimation";
 
 export default function Portfolio(props) {
   const { defaultValues } = props;
-  console.log(defaultValues)
   return (
     <div className="portfolio-component">
       <Container className="portfolio-main-container" fluid="md">
@@ -15,6 +14,10 @@ export default function Portfolio(props) {
               <SideBarAnimation
               avatarSize={180}
               name={defaultValues.fullName}
+              fbLink="https://www.facebook.com/PoPeooo/"
+              githubLink="https://github.com/Duc-Developer?tab=repositories"
+              phoneNumber="0965971469"
+              defaultValues={defaultValues}
               mainWidth="100%"
               mainHeight="100%"
               textColor="white"
