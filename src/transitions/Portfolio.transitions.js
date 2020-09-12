@@ -34,3 +34,22 @@ export const pageRotateTransitions = {
     ease: "easeOut",
     duration: 1
 }
+
+export const pageScalRotVariants ={
+    in: {
+        opacity: 1,
+        rotateZ: "0deg",
+        scale: 1
+    },
+    out: {
+        opacity: 0,
+        rotateZ: "120deg",
+        scale: 0.1
+    }
+}
+
+export const pageScalRotTransitions = {
+    type: "tween",
+    ease: "easeIn",
+    duration: 1
+}

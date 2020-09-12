@@ -95,7 +95,7 @@ export default function Portfolio(props) {
                     <SpecialPage defaultValues={defaultValues} />
                   </Route>
                   <Route exact path="/portfolio-experience">
-                    <ExperiencePage />
+                    <ExperiencePage defaultValues={defaultValues} />
                   </Route>
                 </Switch>
               </AnimatePresence>
