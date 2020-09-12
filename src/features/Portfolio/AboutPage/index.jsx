@@ -36,7 +36,12 @@ export default function AboutPage(props) {
                 <span>{fullName}</span>{" "}
               </li>
               <li>
-                <b>Birthday: </b> <span>{birthday}</span>
+                <b>Birthday: </b> 
+                <span>{
+                `${birthday.slice(8, 10)}
+                -${birthday.slice(5,7)}
+                -${birthday.slice(0, 4)}`
+                }</span>
               </li>
               <li>
                 <b>Email: </b>
