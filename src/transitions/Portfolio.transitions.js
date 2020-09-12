@@ -17,3 +17,20 @@ export const pageScaleTransitions = {
     ease: "easeOut",
     duration: 1
 }
+
+export const pageRotateVariants ={
+    in: {
+        opacity: 1,
+        rotateY: "0deg"
+    },
+    out: {
+        opacity: 0,
+        rotateY: "80deg"
+    }
+}
+
+export const pageRotateTransitions = {
+    type: "tween",
+    ease: "easeOut",
+    duration: 1
+}

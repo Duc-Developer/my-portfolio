@@ -92,7 +92,7 @@ export default function Portfolio(props) {
                     />
                   </Route>
                   <Route exact path="/portfolio-special">
-                    <SpecialPage />
+                    <SpecialPage defaultValues={defaultValues} />
                   </Route>
                   <Route exact path="/portfolio-experience">
                     <ExperiencePage />
