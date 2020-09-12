@@ -43,7 +43,7 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/portfolio-about">
+          <Route path="/">
             {
               !dataView ? <Loading
                 height="calc(100vh)"

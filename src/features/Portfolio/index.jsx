@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 import ExperiencePage from "./ExperiencePage";
 import SpecialPage from "./SpecialPage";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 export default function Portfolio(props) {
   const { defaultValues } = props;
@@ -78,7 +78,7 @@ export default function Portfolio(props) {
           >
             <div className="portfolio__right-board--scroll portfolio__main-mobi--scroll">
               {path && <Redirect to={`/${path}`} />}
-              <AnimatePresence>
+              <AnimatePresence exitBeforeEnter>
                 <Switch>
                   <Route exact path="/portfolio-about">
                     <AboutPage
@@ -104,7 +104,30 @@ export default function Portfolio(props) {
         </div>
 
         <div className="portfolio__main-control portfolio__control-mobi">
-          <div className="portfolio__main-control-top">navTop</div>
+          <div className="portfolio__main-control-top">
+            <i
+              type="button"
+              onClick={() => {
+                setPath("portfolio-about");
+              }}
+              className="fas fa-user fa-2x"
+            />
+            <i
+              type="button"
+              onClick={() => {
+                setPath("portfolio-special");
+              }}
+              className="fas fa-graduation-cap fa-2x"
+            />
+            <i
+              type="button"
+              onClick={() => {
+                setPath("portfolio-experience");
+              }}
+              className="fab fa-buffer fa-2x"
+            />
+          </div>
+          <div className="portfolio__main-control-space"></div>
           <div className="portfolio__main-control-bottom">
             <i
               type="button"

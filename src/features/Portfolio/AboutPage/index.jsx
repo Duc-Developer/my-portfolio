@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Col, Row } from "reactstrap";
+import { motion } from "framer-motion";
+import { pageScaleVariants, pageScaleTransitions } from "../../../transitions";
 import "./AboutPage.css";
 
 AboutPage.propTypes = {
@@ -16,7 +18,12 @@ AboutPage.propTypes = {
 export default function AboutPage(props) {
   const { about, address, birthday, email, fullName, gender, phone } = props;
   return (
-    <div>
+    <motion.div 
+    initial="out" 
+    animate="in" 
+    exit="out" 
+    transition={pageScaleTransitions}
+    variants={pageScaleVariants}>
       <Row>
         <Col xs="12">
           <h1 className="about-page__title">GIỚI THIỆU</h1>
@@ -49,11 +56,9 @@ export default function AboutPage(props) {
               </li>
             </ul>
           </div>
-          <span className="about-page__about-content">
-              {about}
-              </span>
+          <span className="about-page__about-content">{about}</span>
         </Col>
       </Row>
-    </div>
+    </motion.div>
   );
 }
