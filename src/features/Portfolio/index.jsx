@@ -48,7 +48,7 @@ export default function Portfolio(props) {
             onClick={() => {
               setActive(!isActive);
             }}
-            className="fas fa-list-alt fa-3x"
+            className="fas fa-list-alt fa-2x"
           />
         </div>
         <div className="portfolio__dashboard">
@@ -64,6 +64,7 @@ export default function Portfolio(props) {
               githubLink="https://github.com/Duc-Developer?tab=repositories"
               phoneNumber="0965971469"
               defaultValues={defaultValues}
+              backgroundColor="transparent"
               mainWidth="100%"
               mainHeight="100%"
               textColor="white"

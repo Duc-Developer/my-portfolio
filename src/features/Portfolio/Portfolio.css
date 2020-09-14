@@ -28,6 +28,7 @@
   color: white;
   margin-top: 10px;
   margin-bottom: 10px;
+  background-color: transparent;
 }
 
 .portfolio__main-control-bottom i:hover {
@@ -114,6 +115,7 @@
     color: white;
     margin-top: 10px;
     margin-bottom: 10px;
+    background-color: transparent;
   }
   
   .portfolio__main-control-top i:hover {
@@ -122,12 +124,12 @@
 }
 
 @media only screen and (max-width: 1024px) {
-  .portfolio__icon-nav-mobi {
+  .portfolio__icon-nav-mobi i {
     position: absolute;
     color: white;
-    right: 10px;
-    top: 10px;
-    background-color: none;
+    right: 0.1em;
+    top: 0.1em;
+    background-color: #222222
   }
 
   .portfolio__dashboard {
