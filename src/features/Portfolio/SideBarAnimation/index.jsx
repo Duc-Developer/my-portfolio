@@ -45,7 +45,6 @@ export default function SideBarAnimation(props) {
   const [spinFacebook, setSpinF] = useState(null);
   const [spinPhone, setSpinP] = useState(null);
   const [spinGithub, setSpinG] = useState(null);
-  const history = useHistory();
   const componentRef = useRef(null);
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
@@ -96,7 +95,7 @@ export default function SideBarAnimation(props) {
               onMouseLeave={() => {
                 setSpinF(null);
               }}
-              style={{ color: iconColor }}
+              style={{ color: iconColor, backgroundColor: backgroundColor }}
               className={`fab fa-facebook-f ${iconSize} ${spinFacebook}`}
             />
           </a>
@@ -109,7 +108,7 @@ export default function SideBarAnimation(props) {
               onMouseLeave={() => {
                 setSpinP(null);
               }}
-              style={{ color: iconColor }}
+              style={{ color: iconColor, backgroundColor: backgroundColor }}
               className={`fas fa-phone ${iconSize} ${spinPhone}`}
             />
           </a>
@@ -122,7 +121,7 @@ export default function SideBarAnimation(props) {
               onMouseLeave={() => {
                 setSpinG(null);
               }}
-              style={{ color: iconColor }}
+              style={{ color: iconColor, backgroundColor: backgroundColor }}
               className={`fab fa-github ${iconSize} ${spinGithub}`}
             />
           </a>
@@ -136,9 +135,7 @@ export default function SideBarAnimation(props) {
       <div className="side-bar-animation-footer">
         <div>
           <Button
-            onClick={() => {
-              history.push("/login");
-            }}
+            href="/login"
             color="link"
           >
             <b style={{ color: textColor }}>LOGIN</b>
