@@ -3,6 +3,7 @@ import firebase from "firebase";
 import { app } from "../../firebase";
 import * as firebaseui from "firebaseui";
 import "./Login.css";
+import { Button } from "reactstrap";
 
 const ui = new firebaseui.auth.AuthUI(firebase.auth());
 
@@ -53,6 +54,13 @@ export default function Login() {
         <div>
           <b>Note: </b>
           <i>Mọi tài khoản đăng ký thành công nhưng Đức không duyệt sẽ ko thể  truy cập vào form khởi tạo</i>
+        </div>
+        <div className="login-button-back-to-home">
+          <Button 
+          href="/"
+          color="link">
+            <h3>Back to Home</h3>
+          </Button>
         </div>
       </div>
       <div id="loader">
