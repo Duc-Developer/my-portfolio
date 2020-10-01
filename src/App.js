@@ -5,7 +5,6 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Link
 } from "react-router-dom";
 import { MyCVPrint } from './features/MyCV/MyCVPrint';
 import Login from './auth/Login';
@@ -13,9 +12,11 @@ import firebase from 'firebase';
 import { database } from './firebase'
 import { useState } from 'react';
 import Loading from './components/Loading';
+import Portfolio from './features/Portfolio';
 
 function App() {
   const [profile, setProfile] = useState(null);
+  const [dataView, setDataView] = useState(null);
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged(function (user) {
@@ -29,21 +30,37 @@ function App() {
           })
       }
     });
+    database.ref("users/" + "OpoIipVtDJXWCe3TdtzKJDlClr62")
+          .once("value")
+          .then(snap => {
+            if (snap.val()) {
+              setDataView(snap.val());
+            }
+          })
   }, []);
 
   return (
     <div className="App">
       <Router>
-      <Link to="/login">login</Link>
         <Switch>
+          <Route exact path="/">
+            {
+              !dataView ? <Loading
+                height="calc(100vh)"
+                widthIcon={10}
+                heightIcon={10}
+                color="primary" />
+                : <Portfolio defaultValues={!profile ? dataView : profile} />
+            }
+          </Route>
           <Route exact path="/form-building">
             {
-              !profile ? <Loading 
-              height="calc(100vh)"
-              widthIcon="10rem"
-              heightIcon="10rem"
-              color="primary" /> 
-              : <ProfileForm defaultValues={profile} />
+              !profile ? <Loading
+                height="calc(100vh)"
+                widthIcon={10}
+                heightIcon={10}
+                color="primary" />
+                : <ProfileForm defaultValues={profile} />
             }
           </Route>
           <Route exact path="/form-building/print-and-preview">

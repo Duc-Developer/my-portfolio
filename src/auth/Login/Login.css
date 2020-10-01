@@ -14,5 +14,12 @@
 
 .login-page {
     background-color: #aaaaaa;
+    position: relative;
+}
+
+.login-button-back-to-home {
+    position: absolute;
+    left: 0;
+    top: 0;
 }
       

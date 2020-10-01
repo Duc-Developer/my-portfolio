@@ -1,0 +1,42 @@
+
+.experience-page__title {
+    text-transform: uppercase;
+    background: linear-gradient(to right, #ffffff 0%, #28a745 50%, #16e046 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.experience-page--root-color {
+    color: white;
+}
+
+.experience-page__container {
+    display: flex;
+    margin-top: 20px;
+}
+
+.experience-page__left {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 10%;
+    height: 100%
+}
+
+.experience-page__star-icon {
+    color: rgb(50, 219, 241);
+}
+
+.experience-page__right {
+    flex-grow: 1;
+    width: 90%;
+}
+
+.experience-page__achievenments-box {
+    text-align: justify;
+    margin-top: 10px;
+}
+
+.experience-page__achievenments {
+    white-space: pre-line;
+}

@@ -1,6 +1,17 @@
 .my-cv {
   background-color: white;
   font-size: 18px;
+  background: #232526; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #414345,
+      #232526
+    );
+    background: linear-gradient(
+      to right,
+      #414345,
+      #232526
+    );
 }
 
 .my-cv-side-page-left {

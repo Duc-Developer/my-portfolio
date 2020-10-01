@@ -1,0 +1,74 @@
+.special-page__title {
+  text-transform: uppercase;
+  background: linear-gradient(to right, #ffffff 0%, #28a745 50%, #16e046 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.special-page__box {
+    margin-top: 1em
+}
+
+.special-page__education ul {
+  list-style-type: none;
+}
+
+.special-page__education ul li b {
+  color: #28a745;
+  font-size: 1.2em;
+}
+
+.special-page__education ul li span {
+  color: white;
+  font-size: 1.2em;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.special-page__special-name-item {
+    color: white;
+}
+
+.special-page__project-card {
+    margin-top: 10px;
+}
+
+.special-page__project-name {
+    color: white;
+    font-size: 1.5em;
+}
+
+.special-page__project-information {
+    color: white;
+    white-space: pre-line;
+}
+
+.special-page__project-link {
+    color: white;
+}
+
+.special-page__project-link:hover {
+    font-size: 1.2em;
+    color: rgb(155, 23, 41);
+}
+
+.special-page__project-button {
+    margin-left: 10px;
+}
+
+.special-page__project-button i {
+    color: white;
+}
+
+.special-page__project-button i:hover {
+    font-size: 1.2em;
+    color: rgb(155, 23, 41);
+}
+
+.special-page__knowledges-item {
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    float: left;
+}

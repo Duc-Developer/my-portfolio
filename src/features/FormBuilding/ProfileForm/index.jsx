@@ -32,7 +32,7 @@ import ProjectForm from "../ProjectForm";
 import KnowledgesForm from "../KnowLedgesForm";
 
 // const userSchema = {
-//   "uid": null,
+//   "uid": "5R4vUC7pL2RGd6sKgu68a7htbgE2",
 //   "email": "",
 //   "fullName": "",
 //   "phone": "",
@@ -47,18 +47,10 @@ import KnowledgesForm from "../KnowLedgesForm";
 //   "timeStart": "",
 //   "timeEnd": "",
 //   "moreInformation": "",
-//   "experience": [{
-//       "time": "",
-//       "company": "",
-//       "achievements": "",
-//       "position": "",
-//       "id": "root-id-001",
-//     }],
+//   "experience": [{"time": "","company": "","achievements": "","position": "","id": "root-id-001" }],
 //   "special": [{ "name": "", "range": 0, "id": "root-id-001" }],
 //   "knowledges": ["google ads", "photoshop"],
-//   "project": [
-//     { "name": "", "github": "", "website": "", "id": "root-id-001", "information": "" }
-//   ]
+//   "project": [{ "name": "", "github": "", "website": "", "id": "root-id-001", "information": "" }]
 // };
 
 export default function ProfileForm(props) {
